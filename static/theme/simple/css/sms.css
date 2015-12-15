@@ -1,0 +1,439 @@
+﻿@charset "utf-8";
+/**
+ * Developer css
+ * @author leon, wanzhu
+ * Copyright 2014 ifpay.cn, Inc.
+ * @version 2.0 2014-04-04
+ */
+* {
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', Calibri, Helvetica, Arial, Verdana, sans-serif;
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	list-style:none;
+	font-size: small;
+}
+body {
+	overflow-y: scroll;
+	background:#FFF;
+}
+/***Page Structure***/
+#wrap, #wrap-inner, #footer{
+	min-width: 950px;
+	_width: expression(document.body.clientWidth < 950? "950px": "100%" );
+	background: #f4f4f4;
+}
+#header {	
+	height:60px;
+	width:100%;		
+	border-bottom: 1px solid #CDCDCD;
+	background:#4E6BA9;
+}
+#main-body {}
+#content {
+	margin-left: 200px;
+	background: #FFFFFF;
+}
+#content div{
+	padding: 10px;
+}
+#sidebar {
+	float:left;
+	width: 200px;
+}
+#sidebar div {
+	padding: 20px;
+}
+#sidebar-r {
+	position: fixed;
+	right: 0px;
+	top:61px;
+	width: 150px;
+	height: 100%;
+	background: #FFFFFF;
+}
+#footer {
+	width: 100%;
+	background: #e6e6e6;
+	border-top: 1px solid #CCCCCC;
+}
+.container {
+	margin: 0 auto;
+	width:  100%;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.cl {
+	clear: both;
+}
+.textleft {
+	text-align: left;
+}
+.textindent {
+	text-indent: 2em;
+}
+.rcolor {
+	color: red;
+}
+/***button***/
+.staninput {
+	border:1px solid #ddd;
+	color:#666;
+	height:35px;
+	line-height:35px;
+	padding-left: 10px;	
+}
+.staninput:hover {
+	background:#F1F1F1;
+}
+a.logoutBtn {
+	font-weight: bold;
+	background:#89b600;
+	color:#fff;
+	border:1px solid #69b600;
+	font-size:100%;
+	display:block;
+	text-align:center;
+	padding: 0 20px;
+	text-shadow:1px 1px 1px #69b600;
+}
+.blueBtn {
+	background-color: #4E6BA9;
+	border:1px solid #CCCDDD;
+	color:#fff;
+	cursor:pointer;
+	padding:5px 15px;
+	font-weight:bold;
+	text-align:center;
+}
+.blueBtn:hover {
+	background-color: #96c605;
+}
+.grayBtn {
+	background-color: #e7e7e7;
+	border:1px solid #b9b8b6;
+	color:#666;
+	cursor:pointer;
+	padding:3px 5px;
+	text-align:center;
+	margin:0 10px;
+	text-shadow:1px 1px 1px #fff;
+}
+.grayBtn:hover {
+	background-color: #96c605;
+}
+.cbox {
+	width:13px;
+	height:13px;
+	line-height:13px;
+	margin-right:2px;
+	vertical-align:-2px;
+	*vertical-align:middle;
+	_vertical-align:3px;
+}
+
+/***Total Themes***/
+.logo{
+	margin-left: 200px;
+}
+#header strong {
+	color:#fff;
+	float:left;
+	line-height: 60px;
+	font-size:110%;
+	padding: 0 20px;
+	margin-left:5px;
+	background:#6383C6;
+}
+#header .container .config {
+	line-height:60px; 
+	padding-top: 2px;
+	text-align:center; 
+	background-image:url('/static/theme/simple/img/config.png'); 
+	background-position:5px 25px;  
+	background-repeat:no-repeat;
+}
+
+#header .container .config a {
+	font-weight:bold;
+	color:#fff;
+	margin: 0 20px;
+}
+
+#footer .container p{
+	color: #666;
+	font-size: 90%;
+	padding: 10px;
+}
+/***Footer Always correct***/
+html, body, #wrap {
+	height: 100%;
+}
+body > #wrap {
+	height: auto; 
+	min-height: 99.8666666%;
+}
+#wrap-inner {
+	padding-bottom: 40px;
+}
+#footer {
+	position: relative;
+	margin-top: -40px;
+	height: 40px;
+	clear:both;
+}
+/***Clear Hack****/
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix {
+	display: inline-block;
+}
+/* Hides from IE-mac \*/
+* html .clearfix {
+	height: 1%;
+}
+.clearfix {
+	display: block;
+}
+/* End hide from IE-mac */
+
+/***login.php***/
+#devlogin{
+	width: 600px;
+	padding: 10px;
+	margin: 100px auto 0;
+	border: 1px solid #ccc;
+	color: inherit;
+	background: #fff;
+	box-shadow: 5px 5px 5px #ccc;
+}
+.loginwrap {
+	background-color:#eee;
+	text-align:center;
+	padding: 10px;
+}
+.loginwrap h1{
+	border-bottom:1px solid #fff;
+	color: #666;
+	font-size:150%;
+	text-align: center;
+	line-height: 60px;
+	height: 60px;
+}
+.loginfo {
+	margin-top: 20px;
+}
+.loginfo-last {
+	text-align:right; 
+	margin-right: 84px;
+	margin-bottom: 10px;
+}
+/***password_forget.php***/
+#devpf{
+	width: 600px;
+	padding: 10px;
+	margin: 100px auto 0;
+	border: 1px solid #ccc;
+	color: inherit;
+	background: #fff;
+	box-shadow: 5px 5px 5px #ccc;
+}
+.pfwrap {
+	background-color:#eee;
+	text-align:center;
+	padding: 10px;
+}
+.pfwrap h1{
+	border-bottom:1px solid #fff;
+	color: #666;
+	font-size:150%;
+	text-align: center;
+	line-height: 60px;
+	height: 60px;
+}
+.pfinfo {
+	margin-top: 20px;
+}
+.pfinfo-last {
+	margin-bottom: 10px;
+}
+/***register.php***/
+#devreg{
+	width: 800px;
+	padding: 10px;
+	margin: 100px auto 0;
+	border: 1px solid #ccc;
+	color: inherit;
+	background: #fff;
+	box-shadow: 5px 5px 5px #ccc;
+}
+.regwrap {
+	background-color:#eee;
+	text-align:center;
+	padding: 10px;
+}
+.regwrap h1{
+	border-bottom:1px solid #fff;
+	color: #666;
+	font-size:150%;
+	text-align: center;
+	line-height: 60px;
+	height: 60px;
+}
+.reginfo {
+	margin-top: 20px;
+}
+.reginfo-last {
+	margin-bottom: 10px;
+}
+.pfinfo input {
+	margin-top:
+	text-align: left;
+	text-indent: 0;
+}
+
+.workflow {
+	clear:both;
+}
+.workflow li{
+	margin: 20px auto;
+	background: #4e6ba9;
+	float: left;
+	color: #ffffff;
+	padding: 10px;
+	width: 136.005px;
+	font-size: 120%;
+	font-weight:bold;	
+}
+.workflow .current, .workflow .current:hover {
+	background: #99db76;
+}
+.devregtab {
+	width: 100%;
+}
+.regtableft {
+	text-align: right;
+	width: 200px;
+	padding-right: 10px;
+	padding-bottom: 20px;
+	font-size: 110%;
+}
+.regtabmid {
+	text-align: left;
+	width: 450px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+.regtabright {
+	text-align: left;
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+/***user_validate.php***/
+#devuservali{
+	width: 800px;
+	padding: 10px;
+	margin: 100px auto 0;
+	border: 1px solid #ccc;
+	color: inherit;
+	background: #fff;
+	box-shadow: 5px 5px 5px #ccc;
+}
+.uvwrap {
+	background-color:#eee;
+	text-align:center;
+	padding: 10px;
+}
+.uvwrap h1{
+	border-bottom:1px solid #fff;
+	color: #666;
+	font-size:150%;
+	text-align: center;
+	line-height: 60px;
+	height: 60px;
+}
+.uvinfo {
+	margin-top: 20px;
+}
+.uvinfo p, .uvinfo dl {
+	text-indent: 2em;
+	text-align: left;
+}
+.uvinfo-last {
+	margin-bottom: 10px;
+}
+/***user_improvde.php***/
+#devuserimp{
+	width: 800px;
+	padding: 10px;
+	margin: 100px auto 0;
+	border: 1px solid #ccc;
+	color: inherit;
+	background: #fff;
+	box-shadow: 5px 5px 5px #ccc;
+}
+.uiwrap {
+	background-color:#eee;
+	text-align:center;
+	padding: 10px;
+}
+.uiwrap h1{
+	border-bottom:1px solid #fff;
+	color: #666;
+	font-size:150%;
+	text-align: center;
+	line-height: 60px;
+	height: 60px;
+}
+.uiinfo {
+	margin-top: 20px;
+}
+.uiinfo p, .uiinfo dl {
+	text-indent: 2em;
+	text-align: left;
+}
+.uiinfo-last {
+	margin-bottom: 10px;
+}
+.operation-type {
+}
+.operation-type li {
+	color:#666;
+	cursor:pointer;
+	font-size:110%;
+	float:left;
+	height:30px;
+	line-height:30px;
+	min-width:100px;
+	border:1px solid #ccc;
+	text-align:center;
+}
+.tab-current {
+	background:#99db77;
+}
+.business-license {
+	width:350px;
+	float:left
+}
+.business-license span {
+	color:#999;
+	font-size:110%;
+	float:left;
+	line-height:20px;
+}
+.business-license span img {
+	height:90px;
+	width:90px;
+}
+.hide {
+    display:none
+}

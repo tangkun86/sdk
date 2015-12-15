@@ -1,0 +1,102 @@
+﻿@charset "utf-8";
+/**
+ * Developer css
+ * @author leon
+ * Copyright 2014 ifpay.cn, Inc.
+ * @version 1.0 2015-01-23
+ */
+
+body {
+	overflow-y: scroll;
+}
+
+/* Sticky Footer */
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -3.5em;
+}
+.footer, .push {
+	height: 3.5em;
+	clear: both;
+}
+p {
+	padding: 0 0 1em;
+}
+h1, h2, h3, h4, h5, h6 {
+	padding: 0 0 0.4em;
+}
+/* Sticky Footer */
+
+.get {
+	background: #0E90D2;
+	color: #fff;
+	text-align: center;
+	padding: 100px 0;
+}
+.get-title {
+	font-size: 200%;
+	border: 2px solid #fff;
+	padding: 20px;
+	display: inline-block;
+}
+.get-btn {
+	background: #fff;
+}
+.detail {
+	background: #fff;
+}
+.detail-h2 {
+	text-align: center;
+	font-size: 150%;
+	margin: 40px 0;
+}
+.detail-h3 {
+	color: #1f8dd6;
+}
+.detail-p {
+	color: #7f8c8d;
+}
+.detail-mb {
+	margin-bottom: 30px;
+}
+.hope {
+	background: #f4f4f4;
+	padding: 50px 0;
+}
+.hope-img {
+	text-align: center;
+}
+.hope-hr {
+	border-color: #149C88;
+}
+.hope-title {
+	font-size: 140%;
+}
+.about {
+	background: #fff;
+	padding: 40px 0;
+	color: #7f8c8d;
+}
+.about-color {
+	color: #34495e;
+}
+.about-title {
+	font-size: 180%;
+	padding: 30px 0 50px 0;
+	text-align: center;
+}
+.footer p {
+	color: #7f8c8d;
+	margin: 0;
+	padding: 15px 0;
+	text-align: center;
+	background: #2d3e50;
+}

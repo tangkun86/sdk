@@ -1,0 +1,2280 @@
+[ 2015-11-05T15:39:25+08:00 ] 127.0.0.1 /Dev/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000796s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000462s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001380s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `users` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `developers` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `applications` WHERE `user_id` = 1 AND `status` <> 0 ORDER BY id desc LIMIT 0,5   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0060s ]
+SQL: SELECT SUM(fee) as total,S.application_id,A.name FROM statistics S INNER JOIN applications A on S.application_id=A.id  WHERE (  S.user_id=1 and S.status=1 ) GROUP BY S.application_id  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 13 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 14 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+NOTIC: [8] Trying to get property of non-object E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000404s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000437s ]
+
+[ 2015-11-05T15:39:30+08:00 ] 127.0.0.1 /Dev/Applications/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001025s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0038s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `applications` WHERE `status` > 0 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 194 行.
+SQL: SELECT * FROM `applications` WHERE `status` > 0 AND `user_id` = 1 ORDER BY `id` asc LIMIT 0,10   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Applications\index.php 第 51 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000550s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000589s ]
+
+[ 2015-11-05T15:39:31+08:00 ] 127.0.0.1 /Dev/Iaps/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000318s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000827s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0041s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(I.id) AS tp_count FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\IapsController.class.php 第 39 行.
+SQL: SELECT I.id,I.name,A.status,I.iap_key,I.pay_code,I.created,I.status,`application_id`,`app_id`,A.name AS app_name FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 ORDER BY A.status asc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0037s ]
+SQL: SELECT D.user_id,`username`,`company_name` FROM developers D INNER JOIN users u ON D.user_id=u.id   [ RunTime:0.0115s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 18 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 19 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 20 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 21 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 22 行.
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 76 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000630s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000681s ]
+
+[ 2015-11-05T15:39:32+08:00 ] 127.0.0.1 /Dev/Statistics/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000852s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001661s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0038s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(S.id) AS tp_count FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.user_id LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\StatisticsController.class.php 第 39 行.
+SQL: SELECT SUM(S.fee) as total,S.application_id,A.app_id,A.name FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.application_id LIMIT 0,10   [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined index:  E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined variable: start E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 13 行.
+NOTIC: [8] Undefined variable: end E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000346s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000472s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000506s ]
+
+[ 2015-11-05T15:39:32+08:00 ] 127.0.0.1 /Dev/Iaps/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000707s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000835s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000789s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001796s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0054s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(I.id) AS tp_count FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\IapsController.class.php 第 39 行.
+SQL: SELECT I.id,I.name,A.status,I.iap_key,I.pay_code,I.created,I.status,`application_id`,`app_id`,A.name AS app_name FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 ORDER BY A.status asc LIMIT 0,10   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0047s ]
+SQL: SELECT D.user_id,`username`,`company_name` FROM developers D INNER JOIN users u ON D.user_id=u.id   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 18 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 19 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 20 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 21 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 22 行.
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 76 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000340s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000543s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000584s ]
+
+[ 2015-11-05T15:39:34+08:00 ] 127.0.0.1 /Dev/Applications/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001064s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0038s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `applications` WHERE `status` > 0 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 194 行.
+SQL: SELECT * FROM `applications` WHERE `status` > 0 AND `user_id` = 1 ORDER BY `id` asc LIMIT 0,10   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Applications\index.php 第 51 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000371s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000608s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000658s ]
+
+[ 2015-11-05T15:39:35+08:00 ] 127.0.0.1 /Dev/Iaps/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000543s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001145s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(I.id) AS tp_count FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\IapsController.class.php 第 39 行.
+SQL: SELECT I.id,I.name,A.status,I.iap_key,I.pay_code,I.created,I.status,`application_id`,`app_id`,A.name AS app_name FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 ORDER BY A.status asc LIMIT 0,10   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0039s ]
+SQL: SELECT D.user_id,`username`,`company_name` FROM developers D INNER JOIN users u ON D.user_id=u.id   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 18 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 19 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 20 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 21 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 22 行.
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 76 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000249s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000296s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000410s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000441s ]
+
+[ 2015-11-05T15:39:35+08:00 ] 127.0.0.1 /Dev/Statistics/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001056s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0053s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(S.id) AS tp_count FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.user_id LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\StatisticsController.class.php 第 39 行.
+SQL: SELECT SUM(S.fee) as total,S.application_id,A.app_id,A.name FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.application_id LIMIT 0,10   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined index:  E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined variable: start E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 13 行.
+NOTIC: [8] Undefined variable: end E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000572s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000611s ]
+
+[ 2015-11-05T15:39:36+08:00 ] 127.0.0.1 /Dev/Statistics/statIap.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000941s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(S.id) AS tp_count FROM statistics S 
+            LEFT JOIN users u ON S.user_id=u.id
+            LEFT JOIN applications A ON S.application_id=A.id
+            LEFT JOIN developers D ON S.user_id=D.user_id
+            LEFT JOIN iaps I ON S.iap_id=I.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.iap_id LIMIT 1   [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\StatisticsController.class.php 第 91 行.
+SQL: SELECT SUM(S.fee) as total,S.status,S.application_id,A.name,A.app_id,D.company_name,u.username,A.user_id,I.name as iap_name,I.iap_key FROM statistics S 
+            LEFT JOIN users u ON S.user_id=u.id
+            LEFT JOIN applications A ON S.application_id=A.id
+            LEFT JOIN developers D ON S.user_id=D.user_id
+            LEFT JOIN iaps I ON S.iap_id=I.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.iap_id ORDER BY `total` desc LIMIT 0,10   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: app_id E:\Wnmp\noobird\Application\Dev\Controller\ComController.class.php 第 35 行.
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0041s ]
+SQL: SELECT `id`,`name`,`app_id`,`app_key`,`desc` FROM `applications` WHERE `user_id` = 1  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: appId E:\Wnmp\noobird\Application\Dev\View\Statistics\statIap.php 第 15 行.
+NOTIC: [8] Undefined variable: start E:\Wnmp\noobird\Application\Dev\View\Statistics\statIap.php 第 19 行.
+NOTIC: [8] Undefined variable: end E:\Wnmp\noobird\Application\Dev\View\Statistics\statIap.php 第 21 行.
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Statistics\statIap.php 第 51 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000290s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000438s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000476s ]
+
+[ 2015-11-05T15:39:36+08:00 ] 127.0.0.1 /Dev/Statistics/statDetail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000532s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001028s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0047s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(S.id) AS tp_count FROM statistics S 
+            LEFT JOIN users u ON S.user_id=u.id
+            LEFT JOIN applications A ON S.application_id=A.id
+            LEFT JOIN developers D ON S.user_id=D.user_id
+            LEFT JOIN iaps I ON S.iap_id=I.id
+          WHERE S.status > 0 AND S.user_id = 1 LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\StatisticsController.class.php 第 144 行.
+SQL: SELECT S.mobile,S.application_id,S.created,S.fee,S.status,S.client_status,S.operator,A.name,D.company_name,u.username,A.app_id,S.user_id,I.name as iap_name,I.iap_key FROM statistics S 
+            LEFT JOIN users u ON S.user_id=u.id
+            LEFT JOIN applications A ON S.application_id=A.id
+            LEFT JOIN developers D ON S.user_id=D.user_id
+            LEFT JOIN iaps I ON S.iap_id=I.id
+          WHERE S.status > 0 AND S.user_id = 1 ORDER BY `created` desc LIMIT 0,10   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: app_id E:\Wnmp\noobird\Application\Dev\Controller\ComController.class.php 第 35 行.
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0042s ]
+SQL: SELECT `id`,`name`,`app_id`,`app_key`,`desc` FROM `applications` WHERE `user_id` = 1  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: appId E:\Wnmp\noobird\Application\Dev\View\Statistics\statDetail.php 第 8 行.
+NOTIC: [8] Undefined variable: start E:\Wnmp\noobird\Application\Dev\View\Statistics\statDetail.php 第 19 行.
+NOTIC: [8] Undefined variable: end E:\Wnmp\noobird\Application\Dev\View\Statistics\statDetail.php 第 21 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000397s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000616s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000677s ]
+
+[ 2015-11-05T15:39:37+08:00 ] 127.0.0.1 /Dev/Statistics/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000383s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000808s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001319s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0047s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(S.id) AS tp_count FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.user_id LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\StatisticsController.class.php 第 39 行.
+SQL: SELECT SUM(S.fee) as total,S.application_id,A.app_id,A.name FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.application_id LIMIT 0,10   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined index:  E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined variable: start E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 13 行.
+NOTIC: [8] Undefined variable: end E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000232s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000270s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000432s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000464s ]
+
+[ 2015-11-05T15:39:38+08:00 ] 127.0.0.1 /Dev/Iaps/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000429s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001070s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0038s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(I.id) AS tp_count FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\IapsController.class.php 第 39 行.
+SQL: SELECT I.id,I.name,A.status,I.iap_key,I.pay_code,I.created,I.status,`application_id`,`app_id`,A.name AS app_name FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 ORDER BY A.status asc LIMIT 0,10   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0038s ]
+SQL: SELECT D.user_id,`username`,`company_name` FROM developers D INNER JOIN users u ON D.user_id=u.id   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 18 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 19 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 20 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 21 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 22 行.
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 76 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000515s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000559s ]
+
+[ 2015-11-05T15:39:43+08:00 ] 127.0.0.1 /Dev
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000941s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `users` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `developers` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `applications` WHERE `user_id` = 1 AND `status` <> 0 ORDER BY id desc LIMIT 0,5   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0040s ]
+SQL: SELECT SUM(fee) as total,S.application_id,A.name FROM statistics S INNER JOIN applications A on S.application_id=A.id  WHERE (  S.user_id=1 and S.status=1 ) GROUP BY S.application_id  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 13 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 14 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+NOTIC: [8] Trying to get property of non-object E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000276s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000443s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000475s ]
+
+[ 2015-11-05T15:39:45+08:00 ] 127.0.0.1 /Dev/Applications/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000533s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001062s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0041s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `applications` WHERE `status` > 0 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 194 行.
+SQL: SELECT * FROM `applications` WHERE `status` > 0 AND `user_id` = 1 ORDER BY `id` asc LIMIT 0,10   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Applications\index.php 第 51 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000302s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000346s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000452s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000485s ]
+
+[ 2015-11-05T15:39:45+08:00 ] 127.0.0.1 /Dev/Iaps/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000496s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000931s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0039s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(I.id) AS tp_count FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\IapsController.class.php 第 39 行.
+SQL: SELECT I.id,I.name,A.status,I.iap_key,I.pay_code,I.created,I.status,`application_id`,`app_id`,A.name AS app_name FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 ORDER BY A.status asc LIMIT 0,10   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0039s ]
+SQL: SELECT D.user_id,`username`,`company_name` FROM developers D INNER JOIN users u ON D.user_id=u.id   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 18 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 19 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 20 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 21 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 22 行.
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 76 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000711s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000774s ]
+
+[ 2015-11-05T15:39:46+08:00 ] 127.0.0.1 /Dev/Statistics/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000737s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000973s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001852s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0041s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(S.id) AS tp_count FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.user_id LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\StatisticsController.class.php 第 39 行.
+SQL: SELECT SUM(S.fee) as total,S.application_id,A.app_id,A.name FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.application_id LIMIT 0,10   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined index:  E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined variable: start E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 13 行.
+NOTIC: [8] Undefined variable: end E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000551s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000589s ]
+
+[ 2015-11-05T15:39:53+08:00 ] 127.0.0.1 /Dev
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `users` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `developers` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `applications` WHERE `user_id` = 1 AND `status` <> 0 ORDER BY id desc LIMIT 0,5   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0038s ]
+SQL: SELECT SUM(fee) as total,S.application_id,A.name FROM statistics S INNER JOIN applications A on S.application_id=A.id  WHERE (  S.user_id=1 and S.status=1 ) GROUP BY S.application_id  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 13 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 14 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+NOTIC: [8] Trying to get property of non-object E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000235s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000273s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000410s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000442s ]
+
+[ 2015-11-05T15:39:55+08:00 ] 127.0.0.1 /Dev/users/logout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000405s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000542s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001056s ]
+
+[ 2015-11-05T15:39:55+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000936s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000496s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000536s ]
+
+[ 2015-11-05T15:40:20+08:00 ] 127.0.0.1 /Dev/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000914s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `users` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `developers` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `applications` WHERE `user_id` = 1 AND `status` <> 0 ORDER BY id desc LIMIT 0,5   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0047s ]
+SQL: SELECT SUM(fee) as total,S.application_id,A.name FROM statistics S INNER JOIN applications A on S.application_id=A.id  WHERE (  S.user_id=1 and S.status=1 ) GROUP BY S.application_id  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 13 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 14 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+NOTIC: [8] Trying to get property of non-object E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000569s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000613s ]
+
+[ 2015-11-05T15:40:23+08:00 ] 127.0.0.1 /Dev/Iaps/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000404s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001215s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0043s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(I.id) AS tp_count FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\IapsController.class.php 第 39 行.
+SQL: SELECT I.id,I.name,A.status,I.iap_key,I.pay_code,I.created,I.status,`application_id`,`app_id`,A.name AS app_name FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 ORDER BY A.status asc LIMIT 0,10   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0044s ]
+SQL: SELECT D.user_id,`username`,`company_name` FROM developers D INNER JOIN users u ON D.user_id=u.id   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 18 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 19 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 20 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 21 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 22 行.
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 76 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000502s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000542s ]
+
+[ 2015-11-05T15:40:28+08:00 ] 127.0.0.1 /Dev/Statistics/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001028s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0039s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(S.id) AS tp_count FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.user_id LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\StatisticsController.class.php 第 39 行.
+SQL: SELECT SUM(S.fee) as total,S.application_id,A.app_id,A.name FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.application_id LIMIT 0,10   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined index:  E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined variable: start E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 13 行.
+NOTIC: [8] Undefined variable: end E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000667s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000712s ]
+
+[ 2015-11-05T15:41:33+08:00 ] 127.0.0.1 /Dev/Iaps/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000636s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001396s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0042s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(I.id) AS tp_count FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\IapsController.class.php 第 39 行.
+SQL: SELECT I.id,I.name,A.status,I.iap_key,I.pay_code,I.created,I.status,`application_id`,`app_id`,A.name AS app_name FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 ORDER BY A.status asc LIMIT 0,10   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0050s ]
+SQL: SELECT D.user_id,`username`,`company_name` FROM developers D INNER JOIN users u ON D.user_id=u.id   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 18 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 19 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 20 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 21 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 22 行.
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 76 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000552s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000591s ]
+
+[ 2015-11-05T15:41:35+08:00 ] 127.0.0.1 /Dev/Applications/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000636s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000513s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001267s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `applications` WHERE `status` > 0 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 194 行.
+SQL: SELECT * FROM `applications` WHERE `status` > 0 AND `user_id` = 1 ORDER BY `id` asc LIMIT 0,10   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Applications\index.php 第 51 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000494s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000536s ]
+
+[ 2015-11-05T15:41:36+08:00 ] 127.0.0.1 /Dev/Statistics/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001100s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0041s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(S.id) AS tp_count FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.user_id LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\StatisticsController.class.php 第 39 行.
+SQL: SELECT SUM(S.fee) as total,S.application_id,A.app_id,A.name FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.application_id LIMIT 0,10   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined index:  E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined variable: start E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 13 行.
+NOTIC: [8] Undefined variable: end E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000547s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000585s ]
+
+[ 2015-11-05T15:41:36+08:00 ] 127.0.0.1 /Dev/Statistics/statIap.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000471s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000900s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0047s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(S.id) AS tp_count FROM statistics S 
+            LEFT JOIN users u ON S.user_id=u.id
+            LEFT JOIN applications A ON S.application_id=A.id
+            LEFT JOIN developers D ON S.user_id=D.user_id
+            LEFT JOIN iaps I ON S.iap_id=I.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.iap_id LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\StatisticsController.class.php 第 91 行.
+SQL: SELECT SUM(S.fee) as total,S.status,S.application_id,A.name,A.app_id,D.company_name,u.username,A.user_id,I.name as iap_name,I.iap_key FROM statistics S 
+            LEFT JOIN users u ON S.user_id=u.id
+            LEFT JOIN applications A ON S.application_id=A.id
+            LEFT JOIN developers D ON S.user_id=D.user_id
+            LEFT JOIN iaps I ON S.iap_id=I.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.iap_id ORDER BY `total` desc LIMIT 0,10   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: app_id E:\Wnmp\noobird\Application\Dev\Controller\ComController.class.php 第 35 行.
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0036s ]
+SQL: SELECT `id`,`name`,`app_id`,`app_key`,`desc` FROM `applications` WHERE `user_id` = 1  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: appId E:\Wnmp\noobird\Application\Dev\View\Statistics\statIap.php 第 15 行.
+NOTIC: [8] Undefined variable: start E:\Wnmp\noobird\Application\Dev\View\Statistics\statIap.php 第 19 行.
+NOTIC: [8] Undefined variable: end E:\Wnmp\noobird\Application\Dev\View\Statistics\statIap.php 第 21 行.
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Statistics\statIap.php 第 51 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000408s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000444s ]
+
+[ 2015-11-05T15:41:38+08:00 ] 127.0.0.1 /Dev/Statistics/statDetail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001081s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0039s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(S.id) AS tp_count FROM statistics S 
+            LEFT JOIN users u ON S.user_id=u.id
+            LEFT JOIN applications A ON S.application_id=A.id
+            LEFT JOIN developers D ON S.user_id=D.user_id
+            LEFT JOIN iaps I ON S.iap_id=I.id
+          WHERE S.status > 0 AND S.user_id = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\StatisticsController.class.php 第 144 行.
+SQL: SELECT S.mobile,S.application_id,S.created,S.fee,S.status,S.client_status,S.operator,A.name,D.company_name,u.username,A.app_id,S.user_id,I.name as iap_name,I.iap_key FROM statistics S 
+            LEFT JOIN users u ON S.user_id=u.id
+            LEFT JOIN applications A ON S.application_id=A.id
+            LEFT JOIN developers D ON S.user_id=D.user_id
+            LEFT JOIN iaps I ON S.iap_id=I.id
+          WHERE S.status > 0 AND S.user_id = 1 ORDER BY `created` desc LIMIT 0,10   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: app_id E:\Wnmp\noobird\Application\Dev\Controller\ComController.class.php 第 35 行.
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0043s ]
+SQL: SELECT `id`,`name`,`app_id`,`app_key`,`desc` FROM `applications` WHERE `user_id` = 1  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: appId E:\Wnmp\noobird\Application\Dev\View\Statistics\statDetail.php 第 8 行.
+NOTIC: [8] Undefined variable: start E:\Wnmp\noobird\Application\Dev\View\Statistics\statDetail.php 第 19 行.
+NOTIC: [8] Undefined variable: end E:\Wnmp\noobird\Application\Dev\View\Statistics\statDetail.php 第 21 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000605s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000654s ]
+
+[ 2015-11-05T15:42:11+08:00 ] 127.0.0.1 /Dev
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000902s ]
+
+[ 2015-11-05T15:42:11+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000343s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000881s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000263s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000401s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000433s ]
+
+[ 2015-11-05T15:42:15+08:00 ] 127.0.0.1 /Dev
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000304s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000784s ]
+
+[ 2015-11-05T15:42:15+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000781s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000529s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000572s ]
+
+[ 2015-11-05T15:42:16+08:00 ] 127.0.0.1 /Dev
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000901s ]
+
+[ 2015-11-05T15:42:16+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000675s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001372s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000262s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000296s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000401s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000433s ]
+
+[ 2015-11-05T15:42:19+08:00 ] 127.0.0.1 /Dev
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000524s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000369s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000980s ]
+
+[ 2015-11-05T15:42:19+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000637s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000425s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001328s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000460s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000495s ]
+
+[ 2015-11-05T15:42:19+08:00 ] 127.0.0.1 /Dev
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000816s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001577s ]
+
+[ 2015-11-05T15:42:20+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001205s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000235s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000270s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000467s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000505s ]
+
+[ 2015-11-05T15:42:25+08:00 ] 127.0.0.1 /Dev/Users/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001233s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\register.php 第 3 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000519s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000561s ]
+
+[ 2015-11-05T15:42:26+08:00 ] 127.0.0.1 /Dev
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000774s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001490s ]
+
+[ 2015-11-05T15:42:26+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000487s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000921s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000476s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000515s ]
+
+[ 2015-11-05T15:42:27+08:00 ] 127.0.0.1 /Dev
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000905s ]
+
+[ 2015-11-05T15:42:27+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000503s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001044s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000401s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000678s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000737s ]
+
+[ 2015-11-05T15:42:30+08:00 ] 127.0.0.1 /Dev
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000693s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001273s ]
+
+[ 2015-11-05T15:42:30+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000473s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000515s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001085s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000833s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000899s ]
+
+[ 2015-11-05T15:42:36+08:00 ] 127.0.0.1 /Dev
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000485s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000497s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000961s ]
+
+[ 2015-11-05T15:42:36+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000857s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000607s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001611s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000531s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001287s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001413s ]
+
+[ 2015-11-05T15:42:59+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000776s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `users` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `developers` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2015-11-05T15:42:59+08:00 ] 127.0.0.1 /Dev/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000765s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001318s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `users` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `developers` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `applications` WHERE `user_id` = 1 AND `status` <> 0 ORDER BY id desc LIMIT 0,5   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0039s ]
+SQL: SELECT SUM(fee) as total,S.application_id,A.name FROM statistics S INNER JOIN applications A on S.application_id=A.id  WHERE (  S.user_id=1 and S.status=1 ) GROUP BY S.application_id  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 13 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 14 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+NOTIC: [8] Trying to get property of non-object E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000284s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000463s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000499s ]
+
+[ 2015-11-05T15:43:11+08:00 ] 127.0.0.1 /Dev/Applications/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000519s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000395s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `applications` WHERE `status` > 0 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 194 行.
+SQL: SELECT * FROM `applications` WHERE `status` > 0 AND `user_id` = 1 ORDER BY `id` asc LIMIT 0,10   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Applications\index.php 第 51 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000284s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000436s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000469s ]
+
+[ 2015-11-05T15:43:12+08:00 ] 127.0.0.1 /Dev/Iaps/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000925s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0038s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(I.id) AS tp_count FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\IapsController.class.php 第 39 行.
+SQL: SELECT I.id,I.name,A.status,I.iap_key,I.pay_code,I.created,I.status,`application_id`,`app_id`,A.name AS app_name FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 ORDER BY A.status asc LIMIT 0,10   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0050s ]
+SQL: SELECT D.user_id,`username`,`company_name` FROM developers D INNER JOIN users u ON D.user_id=u.id   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 18 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 19 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 20 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 21 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 22 行.
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 76 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000347s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000536s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000575s ]
+
+[ 2015-11-05T15:43:12+08:00 ] 127.0.0.1 /Dev/Statistics/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000391s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001095s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0070s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(S.id) AS tp_count FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.user_id LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\StatisticsController.class.php 第 39 行.
+SQL: SELECT SUM(S.fee) as total,S.application_id,A.app_id,A.name FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.application_id LIMIT 0,10   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined index:  E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined variable: start E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 13 行.
+NOTIC: [8] Undefined variable: end E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000276s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000406s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000439s ]
+
+[ 2015-11-05T15:43:40+08:00 ] 127.0.0.1 /Dev/Statistics/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000402s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001037s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0041s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(S.id) AS tp_count FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.user_id LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\StatisticsController.class.php 第 39 行.
+SQL: SELECT SUM(S.fee) as total,S.application_id,A.app_id,A.name FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.application_id LIMIT 0,10   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined index:  E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined variable: start E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 13 行.
+NOTIC: [8] Undefined variable: end E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000278s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000482s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000521s ]
+
+[ 2015-11-05T15:43:41+08:00 ] 127.0.0.1 /Dev/Iaps/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000368s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000942s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0049s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(I.id) AS tp_count FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\IapsController.class.php 第 39 行.
+SQL: SELECT I.id,I.name,A.status,I.iap_key,I.pay_code,I.created,I.status,`application_id`,`app_id`,A.name AS app_name FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 ORDER BY A.status asc LIMIT 0,10   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0041s ]
+SQL: SELECT D.user_id,`username`,`company_name` FROM developers D INNER JOIN users u ON D.user_id=u.id   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 18 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 19 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 20 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 21 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 22 行.
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 76 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000272s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000460s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000498s ]
+
+[ 2015-11-05T15:43:42+08:00 ] 127.0.0.1 /Dev/Statistics/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000468s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000902s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0037s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(S.id) AS tp_count FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.user_id LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\StatisticsController.class.php 第 39 行.
+SQL: SELECT SUM(S.fee) as total,S.application_id,A.app_id,A.name FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.application_id LIMIT 0,10   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined index:  E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined variable: start E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 13 行.
+NOTIC: [8] Undefined variable: end E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000572s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000610s ]
+
+[ 2015-11-05T15:43:43+08:00 ] 127.0.0.1 /Dev/Iaps/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000473s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000357s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000919s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0036s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(I.id) AS tp_count FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\IapsController.class.php 第 39 行.
+SQL: SELECT I.id,I.name,A.status,I.iap_key,I.pay_code,I.created,I.status,`application_id`,`app_id`,A.name AS app_name FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 ORDER BY A.status asc LIMIT 0,10   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0038s ]
+SQL: SELECT D.user_id,`username`,`company_name` FROM developers D INNER JOIN users u ON D.user_id=u.id   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 18 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 19 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 20 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 21 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 22 行.
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 76 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000240s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000278s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000454s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000490s ]
+
+[ 2015-11-05T15:43:47+08:00 ] 127.0.0.1 /Dev/Iaps/index.html?status=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000383s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000898s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(I.id) AS tp_count FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status = 3 AND I.user_id = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: list E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 45 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 45 行.
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 76 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000234s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000270s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000432s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000469s ]
+
+[ 2015-11-05T15:43:50+08:00 ] 127.0.0.1 /Dev/Iaps/index.html?status=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000965s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001546s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0047s ]
+SQL: SELECT COUNT(I.id) AS tp_count FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status = 5 AND I.user_id = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: list E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 45 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 45 行.
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 76 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000328s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000484s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000526s ]
+
+[ 2015-11-05T15:43:51+08:00 ] 127.0.0.1 /Dev/Applications/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000513s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001045s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0056s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `applications` WHERE `status` > 0 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 194 行.
+SQL: SELECT * FROM `applications` WHERE `status` > 0 AND `user_id` = 1 ORDER BY `id` asc LIMIT 0,10   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Applications\index.php 第 51 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000546s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000750s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000816s ]
+
+[ 2015-11-05T15:43:55+08:00 ] 127.0.0.1 /Dev/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000468s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000907s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `users` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `developers` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `applications` WHERE `user_id` = 1 AND `status` <> 0 ORDER BY id desc LIMIT 0,5   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0041s ]
+SQL: SELECT SUM(fee) as total,S.application_id,A.name FROM statistics S INNER JOIN applications A on S.application_id=A.id  WHERE (  S.user_id=1 and S.status=1 ) GROUP BY S.application_id  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 13 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 14 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+NOTIC: [8] Trying to get property of non-object E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000233s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000270s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000429s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000482s ]
+
+[ 2015-11-05T15:44:03+08:00 ] 127.0.0.1 /Dev
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000595s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000693s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001325s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `users` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `developers` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `applications` WHERE `user_id` = 1 AND `status` <> 0 ORDER BY id desc LIMIT 0,5   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0046s ]
+SQL: SELECT SUM(fee) as total,S.application_id,A.name FROM statistics S INNER JOIN applications A on S.application_id=A.id  WHERE (  S.user_id=1 and S.status=1 ) GROUP BY S.application_id  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 13 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 14 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+NOTIC: [8] Trying to get property of non-object E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000494s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000533s ]
+
+[ 2015-11-05T15:44:07+08:00 ] 127.0.0.1 /Dev/users/logout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000640s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000369s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000981s ]
+
+[ 2015-11-05T15:44:07+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000737s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001296s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000272s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000402s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000432s ]
+
+[ 2015-11-05T15:44:12+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001059s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000784s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002049s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `users` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001047s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001142s ]
+
+[ 2015-11-05T15:46:40+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000643s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000387s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001062s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000550s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000619s ]
+
+[ 2015-11-05T15:46:46+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001144s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `users` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000286s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000326s ]
+
+[ 2015-11-05T15:47:23+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000619s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000800s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000800s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001715s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000433s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000465s ]
+
+[ 2015-11-05T15:47:27+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000690s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000880s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000848s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001886s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0302s ]
+SQL: SELECT * FROM `users` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000348s ]
+
+[ 2015-11-05T15:48:39+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000513s ]
+
+[ 2015-11-05T15:48:41+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000813s ]
+
+[ 2015-11-05T15:48:51+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000584s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+
+[ 2015-11-05T15:49:31+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000743s ]
+
+[ 2015-11-05T15:49:32+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000472s ]
+
+[ 2015-11-05T15:51:07+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000571s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000691s ]
+
+[ 2015-11-05T15:51:15+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000655s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+
+[ 2015-11-05T15:54:26+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002051s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000771s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000829s ]
+
+[ 2015-11-05T15:54:48+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000679s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003122s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000272s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000481s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000527s ]
+
+[ 2015-11-05T15:54:54+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000562s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001787s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002358s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `users` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000233s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000283s ]
+
+[ 2015-11-05T15:55:05+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html?lang=zh-cn
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000783s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000515s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002003s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002616s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000941s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001021s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000586s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000631s ]
+
+[ 2015-11-05T15:55:16+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001778s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002373s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `users` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000358s ]
+
+[ 2015-11-05T15:55:21+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html?lang=zh-cn
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002801s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003374s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000550s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000606s ]
+
+[ 2015-11-05T15:56:28+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html?lang=zh-cn
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000758s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.006192s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007098s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000440s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000766s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000837s ]
+
+[ 2015-11-05T15:56:52+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html?lang=en-us
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000501s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002638s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000701s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000756s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000571s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000615s ]
+
+[ 2015-11-05T15:56:55+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html?lang=en-us
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000555s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003569s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000484s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000523s ]
+
+[ 2015-11-05T16:00:01+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html?l=en-us
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000616s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.039949s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.040704s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000859s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000919s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000660s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000716s ]
+
+[ 2015-11-05T16:00:03+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html?l=en-us
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004011s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000350s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000538s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000579s ]
+
+[ 2015-11-05T16:00:07+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html?l=en-us
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000811s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003692s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000274s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000472s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000516s ]
+
+[ 2015-11-05T16:00:08+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html?l=en-us
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002132s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002693s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000647s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001344s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001424s ]
+
+[ 2015-11-05T16:00:51+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html?l=en-us
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002947s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000440s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000780s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000851s ]
+
+[ 2015-11-05T16:01:47+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html?l=en-us
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002950s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003657s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000509s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000795s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000861s ]
+
+[ 2015-11-05T16:01:53+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html?l=zh-cn
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000640s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000623s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003296s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004071s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001570s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001639s ]
+
+[ 2015-11-05T16:03:35+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html?l=zh-cn
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000629s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000807s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004134s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005092s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000580s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000886s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000967s ]
+
+[ 2015-11-05T16:04:17+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html?l=zh-cn
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000546s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002107s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002850s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001186s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001390s ]
+
+[ 2015-11-05T16:04:23+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html?l=en-us
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000855s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002889s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003964s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000371s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000793s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000865s ]
+
+[ 2015-11-05T16:04:27+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html?l=en-us
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001761s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002254s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000259s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000392s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000424s ]
+
+[ 2015-11-05T16:04:34+08:00 ] 127.0.0.1 /Dev
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003926s ]
+
+[ 2015-11-05T16:04:34+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000391s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002060s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002532s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000776s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000853s ]
+
+[ 2015-11-05T16:07:57+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000652s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000858s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002801s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003779s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000485s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000524s ]
+
+[ 2015-11-05T16:07:58+08:00 ] 127.0.0.1 /Dev
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000484s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002170s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002747s ]
+
+[ 2015-11-05T16:07:58+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000532s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001819s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002424s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000246s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000304s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000541s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000579s ]
+
+[ 2015-11-05T16:08:05+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html/l/zh-cn.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000667s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003144s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004078s ]
+
+[ 2015-11-05T16:08:05+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002081s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001365s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001456s ]
+
+[ 2015-11-05T16:08:07+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html/l/en-us.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002789s ]
+
+[ 2015-11-05T16:08:07+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000086s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000679s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003381s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000239s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000424s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000457s ]
+
+[ 2015-11-05T16:08:13+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html/l/zh-cn.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001840s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002392s ]
+
+[ 2015-11-05T16:08:13+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000368s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003331s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000342s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000529s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000571s ]
+
+[ 2015-11-05T16:08:15+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html/l/zh-cn.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001938s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002491s ]
+
+[ 2015-11-05T16:08:15+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001734s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002273s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000318s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000499s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000542s ]
+
+[ 2015-11-05T16:08:22+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html/l/zh-cn.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000799s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003130s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004057s ]
+
+[ 2015-11-05T16:08:22+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000450s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001690s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002216s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000251s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000442s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000478s ]
+
+[ 2015-11-05T16:08:24+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html/l/en-us.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000606s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000541s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002128s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002768s ]
+
+[ 2015-11-05T16:08:24+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000432s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002409s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000471s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000547s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000601s ]
+
+[ 2015-11-05T16:08:25+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html/l/zh-cn.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000881s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002151s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003226s ]
+
+[ 2015-11-05T16:08:25+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000462s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002149s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000509s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000551s ]
+
+[ 2015-11-05T16:08:29+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html/l/zh-cn.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000744s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001974s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002834s ]
+
+[ 2015-11-05T16:08:29+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001791s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002354s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000570s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000788s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000854s ]
+
+[ 2015-11-05T16:08:30+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html/l/zh-cn.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000793s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004465s ]
+
+[ 2015-11-05T16:08:30+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002102s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002675s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000387s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000666s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000720s ]
+
+[ 2015-11-05T16:08:32+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html/l/en-us.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000508s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000399s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001984s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002458s ]
+
+[ 2015-11-05T16:08:32+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000381s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001961s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002413s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000586s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000600s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000656s ]
+
+[ 2015-11-05T16:08:33+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html/l/zh-cn.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000383s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003173s ]
+
+[ 2015-11-05T16:08:34+08:00 ] 127.0.0.1 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000473s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001983s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002557s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000610s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000901s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000983s ]
+

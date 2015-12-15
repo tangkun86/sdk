@@ -1,0 +1,283 @@
+[ 2015-11-19T10:48:40+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000087s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002081s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.012175s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.017427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.030280s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001700s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002127s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.013161s ]
+INFO: [ app_end ] --END-- [ RunTime:0.013532s ]
+
+[ 2015-11-19T10:48:40+08:00 ] 127.0.0.1 /Public/img/blueBtn.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+
+[ 2015-11-19T10:48:40+08:00 ] 127.0.0.1 /Public/img1/bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000665s ]
+
+[ 2015-11-19T10:48:40+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+
+[ 2015-11-19T10:48:40+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000581s ]
+
+[ 2015-11-19T14:39:18+08:00 ] 192.168.1.211 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000077s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001377s ]
+
+[ 2015-11-19T14:39:20+08:00 ] 192.168.1.211 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000788s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000855s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003774s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004977s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000808s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000940s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001161s ]
+
+[ 2015-11-19T14:39:20+08:00 ] 192.168.1.211 /Public/img1/bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000709s ]
+
+[ 2015-11-19T14:39:20+08:00 ] 192.168.1.211 /Public/img/blueBtn.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+
+[ 2015-11-19T14:39:39+08:00 ] 192.168.1.211 /Home/Users/loginAdmin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000079s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001668s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001628s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.006314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008539s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0400s ]
+SQL: SELECT * FROM `users` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0106s ]
+
+[ 2015-11-19T14:39:39+08:00 ] 192.168.1.211 /Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000542s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002651s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003367s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000549s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000679s ]
+
+[ 2015-11-19T14:39:54+08:00 ] 192.168.1.211 /Developers/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000064s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001226s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001290s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004895s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006769s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0206s ]
+SQL: SELECT COUNT(D.id) AS tp_count FROM developers D LEFT JOIN users u ON D.user_id=u.id  WHERE `status` > 0 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Home\Controller\DevelopersController.class.php 第 36 行.
+SQL: SELECT `company_name`,`company_license`,D.mobile,D.status,`contact`,D.created,`username`,D.user_id,D.id FROM developers D LEFT JOIN users u ON D.user_id=u.id  WHERE `status` > 0 ORDER BY `status` asc LIMIT 0,10   [ RunTime:0.0089s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000735s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000719s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000848s ]
+
+[ 2015-11-19T14:48:15+08:00 ] 192.168.1.211 /Fees/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003064s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0235s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `fees` WHERE `status` > 0 LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Home\Controller\CController.class.php 第 174 行.
+SQL: SELECT * FROM `fees` WHERE `status` > 0 ORDER BY `id` asc LIMIT 0,10   [ RunTime:0.0008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001025s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001328s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001575s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001941s ]
+
+[ 2015-11-19T14:48:17+08:00 ] 192.168.1.211 /Developers/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000568s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000610s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003272s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0038s ]
+SQL: SELECT COUNT(D.id) AS tp_count FROM developers D LEFT JOIN users u ON D.user_id=u.id  WHERE `status` > 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Home\Controller\DevelopersController.class.php 第 36 行.
+SQL: SELECT `company_name`,`company_license`,D.mobile,D.status,`contact`,D.created,`username`,D.user_id,D.id FROM developers D LEFT JOIN users u ON D.user_id=u.id  WHERE `status` > 0 ORDER BY `status` asc LIMIT 0,10   [ RunTime:0.0003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000754s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000829s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001004s ]
+
+[ 2015-11-19T14:48:19+08:00 ] 192.168.1.211 /Home/Applications/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002403s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003216s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0278s ]
+SQL: SELECT COUNT(A.id) AS tp_count FROM applications A LEFT JOIN users u ON A.user_id=u.id  WHERE `status` > 0 LIMIT 1   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0072s ]
+SQL: SELECT D.user_id,`username`,`company_name` FROM developers D INNER JOIN users u ON D.user_id=u.id   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Home\Controller\ApplicationsController.class.php 第 37 行.
+SQL: SELECT A.id,A.name,A.status,`app_key`,`app_id`,`username`,A.user_id,A.created FROM applications A LEFT JOIN users u ON A.user_id=u.id  WHERE `status` > 0 ORDER BY `status` asc LIMIT 0,10   [ RunTime:0.0118s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0088s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 57 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 57 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 57 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 57 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 57 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 54 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 54 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 9720 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000450s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000567s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000636s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000757s ]
+
+[ 2015-11-19T14:48:30+08:00 ] 192.168.1.211 /Applications/index.html?user_id=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000081s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000775s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003164s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004245s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0038s ]
+SQL: SELECT COUNT(A.id) AS tp_count FROM applications A LEFT JOIN users u ON A.user_id=u.id  WHERE `status` > 0 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0294s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0039s ]
+SQL: SELECT D.user_id,`username`,`company_name` FROM developers D INNER JOIN users u ON D.user_id=u.id   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 29 行.
+NOTIC: [8] Undefined variable: list E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 45 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 45 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000729s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000730s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000839s ]
+
+[ 2015-11-19T14:48:37+08:00 ] 192.168.1.211 /Home/Applications/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002129s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002841s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0038s ]
+SQL: SELECT COUNT(A.id) AS tp_count FROM applications A LEFT JOIN users u ON A.user_id=u.id  WHERE `status` > 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0040s ]
+SQL: SELECT D.user_id,`username`,`company_name` FROM developers D INNER JOIN users u ON D.user_id=u.id   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Home\Controller\ApplicationsController.class.php 第 37 行.
+SQL: SELECT A.id,A.name,A.status,`app_key`,`app_id`,`username`,A.user_id,A.created FROM applications A LEFT JOIN users u ON A.user_id=u.id  WHERE `status` > 0 ORDER BY `status` asc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 57 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 57 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 57 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 57 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 57 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 54 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 54 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `company_name` FROM `developers` WHERE `user_id` = 9720 LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+NOTIC: [8] Undefined index: user_id E:\Wnmp\noobird\Application\Home\View\Applications\index.php 第 23 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000639s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000770s ]
+
+[ 2015-11-19T15:33:20+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000858s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000982s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005988s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000634s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000910s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001055s ]
+
+[ 2015-11-19T15:33:20+08:00 ] 127.0.0.1 /Public/img/blueBtn.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+
+[ 2015-11-19T15:33:20+08:00 ] 127.0.0.1 /Public/img1/bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000545s ]
+

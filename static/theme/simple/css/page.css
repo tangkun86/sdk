@@ -1,0 +1,202 @@
+﻿@charset "utf-8";
+/**
+ * developer css
+ * @author wanzhu
+ * Copyright 2013 ifpay.cn, Inc.
+ * @version 1.0 13-03-12
+ */
+
+/*recoment style*/
+.systemClass{background:#fff; border-bottom:1px solid #ddd;   overflow:hidden; padding:0px 0px 7px; margin:7px 0 0; width:100%;}
+.systemClass > a{ border-radius:3px; color:#666; display:inline-block; font-size:12px;padding:5px 5px;}
+.systemClass > a:nth-chilid(1){ border-right:none;}
+.systemClass > a > span{color: #000;}
+.systemClass > a.systemSelect{ background:#85c254;  font-weight:bold; margin-top:-1px;}
+a.systemSelect > span{color:#fff !important;}
+.gameDetail{ border-bottom:1px solid #ccc;border-top:1px solid #fff;overflow:hidden;padding:7px; padding-bottom:10px;}
+.paramTable{ border-collapse:collapse;}
+.paramTable td{ padding:5px;}
+.paramName{ color:#000; font-size:12px; font-weight:normal;}
+.paramCont{ color:#999; font-size:12px;}
+.downloadTable{ padding:10px;}
+.downloadTable tr{ height:50px;}
+.downloadFile{ background:url(../img/downloadFile.png) no-repeat; border:1px solid #e07b28; border-radius:3px;color:#fff; display:inline-block; font-size:14px; font-weight:bold; line-height:35px; height:35px; padding-left:35px; width:100px;}
+.downloadWay{ color:#000; font-size:12px; font-weight:bold;}
+.infophone{ border:1px solid #ccc; color:#999; font-size:12px; float:left; padding-left:5px; height:30px; width:128px;}
+.infophoneSend{ background:url(../img/phoneSendBtn.png) repeat-x; border:1px solid #b37bd3; color:#fff; display:inline-block; font-size:14px; font-weight:bold; height:30px; line-height:30px;padding:0 10px; text-align:center;}
+.ajaxloading{ background:url(../img/loading.gif) no-repeat; display:none;height:16px; width:16px;}
+.detailTabmenu{ background:#f1f2f7 url(../img/detailMenuBg.jpg) repeat-x bottom; height:35px;}
+.detailTabmenu a{ color:#000; font-size:12px; font-weight:bold; outline:none;  padding:0 15px;}
+.current{ background:#fff; border:1px solid #b1bece; border-bottom:none; border-top:none; display:inline-block;height:35px; line-height:35px;text-align:center;}
+.gameDescList{ padding:5px;}
+.screenshot{ display:block; overflow:hidden; }
+.screenshotTitle{ border-bottom:1px dotted #ddd; color:#000; font-size:14px; margin:10px 0; padding-bottom:10px; padding-left:12px;}
+.screenshot li{ float:left; list-style:none; margin-right:10px;}
+.screenshot li img{ float:left; list-style:none; margin-right:10px;min-height:100px; }
+@meadia screen and (max-width:360px){
+.screenshot li img{ float:left; list-style:none; margin-right:10px;min-height:100px; max-width:350px}	
+}
+
+.gameComments{ padding:0px;}
+.comentList{padding:5px;}
+.evaluateBtn {background-color: #85C254;background-image: -moz-linear-gradient(center top , #94D064, #85C254);background:-webkit-linear-gradient(top, #94D064, #85C254);border:1px solid #78b249;color: #fff; cursor:pointer;display:block; font-size:14px; font-weight:bold;height:35px;line-height:35px; margin:0；text-shadow:1px 1px 1px #999; text-align:center;width:100%;}
+.comentList > li{ border-bottom:1px dashed #ccc; list-style:none; padding:10px 0;}
+.appProfile{overflow:hidden; clear:both;}
+.appProfile p{ color:#666; font-size:12px; line-height:25px;}
+.appProfileTitle{ border-bottom:1px dotted #ddd; color:#000; font-size:14px; margin:10px 0; padding-bottom:10px; padding-left:12px;}
+.appProfileDetail{color:#000; font-size:14px; line-height:25px;}
+.commentator{ color:#269ED5; font-size:14px; font-weight:bold; padding-right:5px;}
+.msgcontent{ color:#000; font-size:14px; line-height:25px;}
+.versionInfo{ color:#999; font-size:14px;}
+.versionInfo strong{ color:#000;font-weight:normal;  padding-right:10px;}
+.timeInfo{color:#999; font-size:14px;}
+.timeInfo strong{ color:#000; font-weight:normal; padding:0 10px 0 0;}
+/*增大了Noobird.com的字体大小*/
+a.logout{ color:#fff; font-size:16px; padding-right:10px;}
+a.logout:hover{ color:#DAE6FF;}
+/*comment*/
+.commentDiv{ border-bottom:1px solid #ccc; margin:10px 0; overflow:hidden; padding:5px 10px 15px;width:100%;}
+.commentDiv label{ color:#000; font-size:12px; float:left; padding-right:10px; text-align:right;width:50px;vertical-align: top;}
+.commentDiv input{ }
+.comentInput{ background:#fefff6; border:1px solid #ddd; height:30px; width:100%;}
+.comentTextarea{background:#fefff6; color:#666; font-size:12px; line-height:25px;border:1px solid #ddd;min-height:100px; padding:2px 5px; width:98% !important;}
+.commentBtnDiv{ margin:10px 0;}
+/* forum style */
+.postsContent{ padding:0px;}
+.postsContent > .postsList:nth-child(1){padding-top:0; border-top:none;}
+/*.postsList:before{content:counter(mycounter);color:#000; font-size:20px;  margin-left:10px;margin-top:5px; position:absolute;}*/
+.postsList{counter-increment:mycounter; border-bottom: 1px solid #aaa; border-top: 1px solid #fff; clear:both; overflow:hidden; padding:5px 0; width:100%;}
+.postsItem{}
+.postsItem{}
+.postsLink{  color:#486bb2; font-size:14px; font-weight:bold; display:block;}
+.postsItem dl{  margin-top:-5px;}
+.postsItem dt{ color:#000; font-size:14px; line-height:23px; margin-top:10px; padding-left:10px;}
+.postsItem dt strong a{ color:#000; font-size:12px; line-height:23px; padding-right:5px;}
+.postsItem dt strong a:hover{color:#7aa5b9;}
+.postsItem dd{color:#7aa5b9; font-size:12px;}
+.postsToolBar{ margin-left:10px;}
+.postsDate{ color:#999; font-size:12px;}
+.postsDate strong{ color:#2980B9; padding-right:5px; font-size:14px; font-weight:normal;}
+.heartMagrin{ margin:0 10px;}
+.commentNum{ color:#999; font-size:12px; padding:0 10px 0 5px;}
+
+/* community style*/
+.communityList{border-bottom: 1px solid #fff; border-top: 1px solid #fff; clear:both; overflow:hidden; padding:5px 0; width:100%;}
+.communityItem{}
+.communityItem dt{ color:#000; font-size:14px; line-height:23px; margin-top:10px; padding-left:10px;}
+.categoryItem h1{ background:url(../img/communityTitleBg.png) repeat-x bottom;border-bottom:1px solid #aaafbc;  color:#000; font-size:14px; font-weight:bold; display:block; height:30px; line-height:30px; padding:0 5px;text-shadow:1px 1px 1px #fff;}
+.categoryItem h1 a{ border:none; display:inline-block; padding:0;}
+.categoryItem .communityTitle{ color:#3ea5ce; font-size:14px;}
+.categoryItem {border-bottom:1px solid #ddd; border-top:1px solid #fff; padding:15px; }
+.categoryItem:hover{ background:#dcf5ff;}
+.categoryPhotoItem {border-bottom:1px solid #ddd; border-top:1px solid #fff; }
+.categoryPhotoItem:hover{ background:#fbce37;}
+.categoryPhotoItem .PhotoItem{ border-right:1px solid #ddd;border-bottom:1px solid #ddd; border-top:1px solid #fff; display:table-cell;float:left; list-style:none;  margin-right:-2px;width:50%;vertical-align:middle;}
+.replypop{ background:#e6bd32; color:#fff; font-size:11px; font-weight:bold; text-align:center;  border-radius:10px; padding:2px 8px;}
+.publisher{ color:#666 !important; font-size:14px; font-weight:normal !important; padding-right:10px;}
+.publishDate{color:#999; font-size:12px; padding-right:10px;}
+.visitor{color:#999; font-size:12px; padding-right:10px;}
+.editposts{ color:#999; font-size:12px; padding-right:10px;}
+.grateful{ color:#999; font-size:12px; padding-right:10px;}
+.myreport{ color:#999; font-size:12px; padding-right:10px;}
+.PhotoItem p{ padding:5px;}
+
+.themeList{ background:#f9f9f9;border-bottom: 1px solid #aaa; border-top: 1px solid #fff; clear:both; overflow:hidden; padding:5px 0; width:100%;}
+.themeItem{}
+.themeItem dt{ color:#000; font-size:14px; line-height:23px; margin-top:10px; padding-left:10px;text-shadow:0px 1px 1px #fff;}
+.themeTopic{color:#000; font-size:20px; font-weight:bold; display:block; text-shadow:0px 1px 1px #fff;}
+.myEvaluate{ overflow:hidden}
+.postsFormDiv{ margin:5px 0; overflow:hidden; width:100%;}
+.wantSay{ background:#fff; border:1px solid #6fb32c; border-bottom:none; color:#666; display:block; font-size:14px; min-height:30px; margin-top:5px; padding:5px 0; width:100%;}
+.wantSubmit{background-color: #d4ac28;background-image: -moz-linear-gradient(center top , #fbce37, #d4ac28); border:1px solid #c5a024;color: #fff; display:block; font-size:14px; font-weight:bold;height:35px;line-height:35px; margin:5px;text-shadow:1px 1px 1px #999; text-align:center;width:99%;}
+.totalComentDiv{border-bottom:1px solid #aaa; width:100%; padding-bottom:5px;}
+.totalComments{  color:#000; font-size:14px; padding:10px;}
+.totalComments strong{ color:#2980b9; padding:0 5px;}
+/* space style*/
+.spaceInfo{ color:#09C; font-size:14px; margin:0 auto; padding:15px; width:200px; text-align:center;}
+
+/*wirte message*/
+.writeTable{ border-collapse:collapse; width:100%;}
+.writeTable td{ padding:10px 10px 0 0; font-size:12px; text-align:right;vertical-align:top;}
+.messageInput{ background:#fdfff5; border:1px solid #ccc; height:25px; line-height:25px;width:100%;}
+.messageTextarea{ background:#fdfff5; border:1px solid #ccc; height:25px; line-height:25px;min-height:100px; width:100%;}
+.addcontact{background:url(../img/icon_addcontact.png) no-repeat; cursor:pointer;display:inline-block; height:16px;text-indent:-9999px; width:16px; vertical-align:middle; opacity:0.7; position:absolute; right:5px; top:3px;}
+.msgUserName{ color:#000; font-size:14px; font-weight:bold; display:inline-block; padding-right:10px;}
+.receiverDiv{ position:relative;}
+.receiverList{ border:1px solid #ddd; display:none;}
+.receiverList a{ border-bottom:1px solid #ddd; color:#666; display:block; font-size:12px; list-style:none; height:30px; line-height:30px; padding-left:10px;}
+.receiverList a:nth-child(even){ background:#fffff1;}
+.commentSection{ display:none; margin-top:15px; margin-left:50px;}
+.commentTextarea{ border:1px solid #ddd;  color:#999; font-size:12px; line-height:25px; min-height:50px; width:80%;}
+
+/*option*/
+.editOperation{ color:#797fcb; display:inline-block;font-size:12px; padding-right:10px;}
+.deleteOperation{color:#797fcb; display:inline-block; font-size:12px;padding-right:10px;}
+.reportOperation{color:#797fcb; display:inline-block; font-size:12px;padding-right:10px;}
+.deleMar{ padding-right:10px;}
+.editTexarea{ border:1px solid #ddd;min-height:80px; width:100%;}
+
+/*search pages*/
+.searchTips{ border-bottom:1px solid #aaa; margin-bottom:10px;}
+.searchTips p{color:#000; font-size:14px; padding:10px;}
+.searchTips p span{ color:#2980b9; padding:0 5px;}
+
+/*page*/
+.pagination{ margin:10px; overflow:hidden;}
+.pagination span, .pagination span {font-size: 12px;}
+.pageBg{ background:url(../img/pageBg.png) repeat-x; border:1px solid #b7b7b7; color:#707070; display:inline-block;font-size: 12px; height:23px; line-height:23px;padding:0 7px; text-align:center; text-shadow:1px 1px 1px #fff; margin-top:7px;}
+.pageBgCur{ background:url(../img/pageBgCur.png) repeat-x; border:1px solid #333; color:#fff; display:inline-block; height:23px; line-height:23px;padding:0 7px; text-align:center; text-shadow:1px 1px 1px #666;}
+.falsePageBg{ background:#fff;border:1px solid #b7b7b7; color:#707070; display:inline-block; height:23px; line-height:23px;padding:0 7px; text-align:center; text-shadow:1px 1px 1px #fff;}
+.newBtnFont{ color:#a65002; font-size:14px; outline:none;text-align:center;text-shadow:1px 1px 1px #fff;}
+.noInfo{ color:#000; font-size:16px; padding:20px 0; text-align:center;}
+.noTips{ background:url(../img/noTips.png) no-repeat; height:128px; margin:0 auto; width:128px;}
+.partingLine{ background:#ccc; height:2px; overflow:hidden;}
+/*icon style*/
+.icon_success{background:url(../img/icon_success.png) no-repeat; border-radius:10px; display:inline-block; height:32px; width:32px; vertical-align:middle;}
+
+/*my personal info*/
+.personalInfo{ clear:both; padding:0px 0; width:100%;}
+.personalLevel{ }
+.personalLevel dl{ }
+.personalLevel dt{ color:#fff; font-size:14px; line-height:23px; margin-top:0px; margin-left:75px;text-shadow:0px 1px 1px #666;}
+.personalLevel dd{color:#fff; font-size:12px;}
+.personalAccount{ color:#fff; display:inline-block; font-size:16px; font-weight:bold;text-shadow:0px 1px 1px #666;}
+
+.basicInfoBar{ margin:5px 0 5px 90px;}
+.sex{ color:#fff; font-size:14px;font-weight:bold;text-shadow:0px 1px 1px #666;}
+.myage{color:#fff; font-size:14px;font-weight:bold;text-shadow:0px 1px 1px #666;}
+.myplace{ color:#fff; font-size:14px; padding-left:5px;font-weight:bold;text-shadow:0px 1px 1px #666;}
+.myschool{ color:#fff; font-size:14px; padding-left:5px;font-weight:bold;text-shadow:0px 1px 1px #666;}
+.myGrade{color:#fff; font-size:14px; padding-left:5px;font-weight:bold;text-shadow:0px 1px 1px #666;}
+.personalAvatar{ display:block; float:left;margin-top:4px; margin-left:5px;}
+.personalAvatar img{ border-radius:3px; height:60px; width:60px;}
+.signature{ border-bottom:1px solid #ccc; line-height:25px; padding-top:5px;}
+.signature span{ color:#fff; font-size:12px; font-weight:normal; padding:5px; text-shadow:1px 1px 1px #fff;}
+.signatureInfo{ color:#fff; font-size:12px; float:left; margin-top:5px; margin-left:10px;}
+.signatureText{border: 1px solid #ccc;color: #666; font-size:12px;padding: 0.5em 0;width: 100%;}
+.countList{background-color:#eaeff6;background-image:-moz-linear-gradient(center top,#fff,#eaeff6); background-image:-webkit-linear-gradient(top, #fff,#eaeff6);overflow:hidden;}
+.countList .countItem{ color:#000; border-right:1px solid #ccc; float:left; list-style:none; margin-right:-2px; padding:1px 0px; text-align:center; width:50%;}
+.countList .countItem:nth-child(3){ border-right:none;}
+.countList .countItem > a{ color:#000;}
+.countList .countItem > a > span{ display:block;}
+span.countNum{font-size:14px;}
+span.countName{ font-weight:normal; font-size:12px;}
+.sortTags{ background:#9DD5FF; border-radius:3px;color:#fff; display:inline-block; font-size:11px; margin-bottom:5px; padding:1px 3px; margin-left:2px; vertical-align:middle;}
+.currentCategory{ background:#fdaa28; color:#fff !important; display:inline-block; margin-right:0px;padding:0 5px;text-align:center;}
+
+.ke-toolbar{ width:100%;}
+.ke-container .ke-container-default{ width:100% !important}
+.downloadType{ color:#999; display:block; font-size:11px; margin-top:-5px; text-align:center}
+.gameParams{ line-height:50px;}
+.languageOption{ position:relative; margin:4px 4px 0px;}
+
+.otherLanguage{ border:solid 1px #CCCCCC; border-top:none; border-left:none;background:#DAE6FF; display:none; position:absolute; top:36px; left:-4px; width:100px; z-index:999; padding:2px 0 2px 0;}
+.otherLanguage > a{ color:#000; display: block;  font-size:12px; height:30px; line-height:30px; padding: 2px 0 4px 4px;}
+.otherLanguage > a:hover{ color:#fff;background:#6eb4e2;}
+.icon_lanarrow{background:url(../img/icon_lanarrow.png) no-repeat;cursor:pointer; display:inline-block; height:10px; margin-left:5px; width:10px;}
+.currentVersion{ color:#bee5ff; cursor:pointer; font-size:14px;}
+
+/*yuyang 09-10 begin*/
+
+/*隐藏手机平台分类*/
+.systemClass { display:none;}

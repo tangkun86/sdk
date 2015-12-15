@@ -1,0 +1,731 @@
+﻿@charset "utf-8";
+/**
+ * Developer css
+ * @author leon, wanzhu
+ * Copyright 2014 ifpay.cn, Inc.
+ * @version 2.0 2014-04-04
+ */
+* {
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', Calibri, Helvetica, Arial, Verdana, sans-serif;
+	margin:0;
+	padding:0;
+	border: 0;	
+	text-decoration:none;
+	list-style:none;
+	font-size: small;
+}
+body {
+	overflow-y: scroll;
+	background:#FFF;
+}
+/***Page Structure***/
+#wrap, #wrap-inner, #footer{
+	z-index: 1;
+	min-width: 950px;
+	_width: expression(document.body.clientWidth < 950? "950px": "100%" );
+	background: #f4f4f4;
+}
+#header {	
+	_width: expression(document.body.clientWidth < 950? "950px": "100%" );
+	height:60px;
+	overflow:hidden;	
+	border-bottom: 1px solid #CDCDCD;
+	background:#4E6BA9;
+}
+#main-body {}
+#content {
+	margin-left: 200px;
+	background: #FFFFFF;
+	padding: 20px;
+}
+#sidebar {
+	float:left;
+	width: 200px;
+}
+#sidebar div {
+	padding: 20px 0;
+}
+#sidebar-r {
+	position: fixed;
+	right: 0px;
+	top:61px;
+	width: 150px;
+	height: 100%;
+	background: #FFFFFF;
+}
+#footer {
+	width: 100%;
+	background: #e6e6e6;
+	border-top: 1px solid #CCCCCC;
+}
+.container {
+	margin: 0 auto;
+	width:  100%;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.cl {
+	clear: both;
+}
+.textleft {
+	text-align: left;
+}
+.textindent {
+	text-indent: 2em;
+}
+.rcolor {
+	color: red;
+}
+.hide {
+    display:none
+}
+/***button***/
+.staninput {
+	border:1px solid #ddd;
+	color:#666;
+	height:35px;
+	line-height:35px;
+	padding-left: 10px;
+}
+.staninput:hover {
+	background:#F1F1F1;
+}
+.kalendaeinput {
+	border:1px solid #ddd;
+	color:#666;
+	height:25px;
+	line-height:25px;
+	padding-left: 25px;
+	width: 88px;
+	cursor: pointer;
+	background-image:url('/static/theme/simple/img/icon-calendar.png'); 
+	background-position: 5px 5px;
+	background-repeat:no-repeat;	
+}
+.kalendaeinput:hover {
+	cursor: pointer;
+	background:#F1F1F1;
+	background-image:url('/static/theme/simple/img/icon-calendar.png'); 
+	background-position: 5px 5px;
+	background-repeat:no-repeat;		
+}
+.stanselect {
+	height:26px;
+	line-height:26px;
+	border:#ddd solid 1px;
+	padding-left:6px;
+	color: #666;
+	text-align:center;	
+	background: #fff;
+	outline: none;
+	*behavior: url(select.htc);
+	cursor:pointer;	
+}
+.stanselect:hover {
+	background:#F1F1F1;
+}
+.logoutBtn a {
+	font-weight: bold;
+	background:#89b600;
+	color:#fff;
+	display:block;
+	text-align:center;
+	padding: 0 20px;
+	height:60px;
+	line-height:60px;	
+}
+.logoutBtn a:hover {
+	background:#99DB76;
+}
+.sysBtn a {
+	font-weight: bold;
+	color: #fff;
+	display: block;
+	padding: 0 20px 0 32px;;
+	height: 60px;
+	line-height:60px;
+	text-align:center;
+	background: none;
+	background-image:url('/static/theme/simple/img/config.png'); 
+	background-position: 16px 23px;
+	background-repeat:no-repeat;
+}
+.sysBtn a:hover {
+	background:#6383C6;
+	background-image:url('/static/theme/simple/img/config.png'); 
+	background-position: 16px 23px;
+	background-repeat:no-repeat;		
+}
+.sysBtnOn a {
+	background:#6383C6;
+	background-image:url('/static/theme/simple/img/config.png'); 
+	background-position: 16px 23px;
+	background-repeat:no-repeat;		
+}
+.blueBtn {
+	background-color: #4E6BA9;
+	border:1px solid #CCCDDD;
+	color:#fff;
+	cursor:pointer;
+	padding:5px 15px;
+	font-weight:bold;
+	text-align:center;
+}
+.blueBtn:hover {
+	background-color: #96c605;
+}
+.grayBtn {
+	background-color: #e7e7e7;
+	border:1px solid #b9b8b6;
+	color:#666;
+	cursor:pointer;
+	padding:5px 15px;
+	font-weight:bold;
+	text-align:center;
+}
+.grayBtn:hover {
+	background-color: #96c605;
+	color: #fff;
+}
+.cbox {
+	width:13px;
+	height:13px;
+	line-height:13px;
+	margin-right:2px;
+	vertical-align:-2px;
+	*vertical-align:middle;
+	_vertical-align:3px;
+}
+.ctextarea {
+	color:#666;
+	border:1px solid #ddd;
+	min-width:400px;
+	min-height:120px;
+	line-height:25px;
+}
+.aBlueBtn, .aGrayBtn, .aGreenBtn {
+    font-size: 90%;
+    color: #fff;
+}
+.aBlueBtn span {
+	border: 1px solid #ccc;
+	background: #4E6BA9;
+    padding: 5px;
+	font-weight:bold;
+	box-shadow: 1px 1px 1px #ccc;	
+}
+.aGrayBtn span {
+	border: 1px solid #ccc;
+	background: #e7e7e7;
+    padding: 5px;
+	font-weight:bold;
+	box-shadow: 1px 1px 1px #ccc;
+}
+.aGreenBtn span {
+	border: 1px solid #ccc;
+	background: #89B600;
+    padding: 5px;
+	font-weight:bold;
+	box-shadow: 1px 1px 1px #ccc;
+}
+.aBlueBtn span:hover {
+	background: #99DB76;
+}
+.aGrayBtn span:hover {
+	background: #F00;
+}
+.aGreenBtn span:hover {
+	cursor: default;		
+}
+/***Total Themes***/
+.logo{
+}
+#header strong {
+	color:#fff;
+	float:left;
+	line-height: 60px;
+	font-size:110%;
+	padding: 0 20px;
+	margin-left:5px;
+	background:#6383C6;
+}
+
+.languageOption{ 
+	position: relative;
+}
+.otherLanguage{
+	border: none;
+	background: #6383C6;
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: -174px;
+	width: auto;
+}
+.otherLanguage > a{ 
+	color:#fff;
+	display: block;
+	font-size: 90%;
+	height:60px;
+	line-height:60px;
+	padding:0 7px;
+}
+.otherLanguage > a:hover{
+	color:#fff;
+	background:#6eb4e2;
+	z-index: 99999;	
+}
+.currentVersion{
+	color:#bee5ff;
+	cursor:pointer;
+	font-size:14px;
+}
+#footer .container p{
+	color: #666;
+	font-size: 90%;
+	padding: 10px;
+}
+a.menuItem {
+	color:#5d5a55;
+	border-bottom:0px solid #aaa;
+	display:block;
+	font-size:110%;
+	padding:10px 30px 10px 10px;
+	text-align:right;
+}
+a.menuItem:hover {
+	background:#dfdfdf;
+}
+a.menuSelect {
+	background:#dfdfdf;
+	color:#373737;
+	text-shadow:1px 1px 1px #fff;
+}
+.consoletitle h1 {
+	border-bottom: 1px solid #ddd;
+	color:#7f7f7f;
+	font-size:140%;
+	padding: 6px 0px 6px 10px;
+}
+.consoleinfobar {
+	color: #666;
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	line-height: 36px;
+	height: 36px;
+}
+.consoleinfo {
+	margin: 10px;
+}
+.consoleinfo dl dd {
+	color:#666;
+	padding: 10px 0px 0px 0px;
+}
+.conoleinfo dl dd strong {
+	color:#666;
+	font-size:100%;
+	font-weight:normal;
+}
+.consolebartab {
+	width: 100%;
+	border-collapse:collapse;
+}
+.consoletab {
+	width: 100%;
+	border-collapse:collapse;
+}
+.consoletab tr th{
+	padding:10px;
+	border: 1px solid #ccc;
+	background-color: #f4f4f4;
+	text-align:center;
+}
+.consoletab tr th:hover{
+	background-color: #ccc;
+	cursor: pointer;
+}
+.consoletab tr td{
+	border: 1px solid #ccc;
+	padding:10px;
+}
+/***Footer Always correct***/
+html, body, #wrap {
+	height: 100%;
+}
+body > #wrap {
+	height: auto; 
+	min-height: 99.8666666%;
+}
+#wrap-inner {
+	padding-bottom: 40px;
+}
+#footer {
+	position: relative;
+	margin-top: -40px;
+	height: 40px;
+	clear:both;
+}
+/***Clear Hack****/
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix {
+	display: inline-block;
+}
+/* Hides from IE-mac \*/
+* html .clearfix {
+	height: 1%;
+}
+.clearfix {
+	display: block;
+}
+/* End hide from IE-mac */
+
+/***login.php***/
+#devlogin{
+	width: 600px;
+	padding: 10px;
+	margin: 100px auto 50px;
+	border: 1px solid #ccc;
+	color: inherit;
+	background: #fff;
+	box-shadow: 5px 5px 5px #ccc;
+}
+.loginwrap {
+	background-color:#eee;
+	text-align:center;
+	padding: 10px;
+}
+.loginwrap h1{
+	border-bottom:1px solid #fff;
+	color: #666;
+	font-size:150%;
+	text-align: center;
+	line-height: 60px;
+	height: 60px;
+}
+.loginfo {
+	margin-top: 20px;
+}
+.loginfo-last {
+	text-align:right; 
+	margin-right: 84px;
+	margin-bottom: 10px;
+}
+/***password_forget.php***/
+#devpf{
+	width: 600px;
+	padding: 10px;
+	margin: 100px auto 50px;
+	border: 1px solid #ccc;
+	color: inherit;
+	background: #fff;
+	box-shadow: 5px 5px 5px #ccc;
+}
+.pfwrap {
+	background-color:#eee;
+	text-align:center;
+	padding: 10px;
+}
+.pfwrap h1{
+	border-bottom:1px solid #fff;
+	color: #666;
+	font-size:150%;
+	text-align: center;
+	line-height: 60px;
+	height: 60px;
+}
+.pfinfo {
+	margin-top: 20px;
+}
+.pfinfo-last {
+	margin-bottom: 10px;
+}
+/***register.php***/
+#devreg{
+	width: 800px;
+	padding: 10px;
+	margin: 50px auto;
+	border: 1px solid #ccc;
+	color: inherit;
+	background: #fff;
+	box-shadow: 5px 5px 5px #ccc;
+}
+.regwrap {
+	background-color:#eee;
+	text-align:center;
+	padding: 10px;
+}
+.regwrap h1{
+	border-bottom:1px solid #fff;
+	color: #666;
+	font-size:150%;
+	text-align: center;
+	line-height: 60px;
+	height: 60px;
+}
+.reginfo {
+	margin-top: 20px;
+}
+.reginfo-last {
+	margin-bottom: 10px;
+}
+.pfinfo input {
+	margin-top:
+	text-align: left;
+	text-indent: 0;
+}
+
+.workflow {
+	clear:both;
+}
+.workflow li{
+	margin: 20px auto;
+	background: #4e6ba9;
+	float: left;
+	color: #ffffff;
+	padding: 10px;
+	width: 136.005px;
+	font-size: 120%;
+	font-weight:bold;	
+}
+.workflow .current, .workflow .current:hover {
+	background: #99db76;
+}
+.devregtab {
+	width: 100%;
+}
+.regtableft {
+	text-align: right;
+	width: 200px;
+	padding-right: 10px;
+	padding-bottom: 20px;
+	font-size: 110%;
+}
+.regtabmid {
+	text-align: left;
+	width: 450px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+.regtabright {
+	text-align: left;
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+/***user_validate.php***/
+#devuservali{
+	width: 800px;
+	padding: 10px;
+	margin: 100px auto 50px;
+	border: 1px solid #ccc;
+	color: inherit;
+	background: #fff;
+	box-shadow: 5px 5px 5px #ccc;
+}
+.uvwrap {
+	background-color:#eee;
+	text-align:center;
+	padding: 10px;
+}
+.uvwrap h1{
+	border-bottom:1px solid #fff;
+	color: #666;
+	font-size:150%;
+	text-align: center;
+	line-height: 60px;
+	height: 60px;
+}
+.uvinfo {
+	margin-top: 20px;
+}
+.uvinfo p, .uvinfo dl {
+	text-indent: 2em;
+	text-align: left;
+}
+.uvinfo-last {
+	margin-bottom: 10px;
+}
+/***user_improvde.php***/
+#devuserimp{
+	width: 800px;
+	padding: 10px;
+	margin: 50px auto;
+	border: 1px solid #ccc;
+	color: inherit;
+	background: #fff;
+	box-shadow: 5px 5px 5px #ccc;
+}
+.uiwrap {
+	background-color:#eee;
+	text-align:center;
+	padding: 10px;
+}
+.uiwrap h1{
+	border-bottom:1px solid #fff;
+	color: #666;
+	font-size:150%;
+	text-align: center;
+	line-height: 60px;
+	height: 60px;
+}
+.uiinfo {
+	margin-top: 20px;
+}
+.uiinfo p, .uiinfo dl {
+	text-indent: 2em;
+	text-align: left;
+}
+.uiinfo-last {
+	margin-bottom: 10px;
+}
+.operation-type {
+}
+.operation-type li {
+	color:#666;
+	cursor:pointer;
+	font-size:110%;
+	float:left;
+	height:30px;
+	line-height:30px;
+	min-width:100px;
+	border:1px solid #ccc;
+	text-align:center;
+}
+.tab-current {
+	background:#99db76;
+}
+/*为了格式美观，将上传照片的要求每一行都显示在一行，所以将width从350px修改为410px。*/
+.business-license {
+	width:410px;
+	float:left
+}
+.business-license span {
+	color:#999;
+	font-size:110%;
+	float:left;
+	line-height:20px;
+}
+.business-license span img {
+	height:90px;
+	width:90px;
+}
+.hide {
+    display:none
+}
+/***user_improvde_wait.php***/
+#devuserimpw{
+	width: 800px;
+	padding: 10px;
+	margin: 50px auto;
+	border: 1px solid #ccc;
+	color: inherit;
+	background: #fff;
+	box-shadow: 5px 5px 5px #ccc;
+}
+.uiwwrap {
+	background-color:#eee;
+	text-align:center;
+	padding: 10px;
+}
+.uiwwrap h1{
+	border-bottom:1px solid #fff;
+	color: #666;
+	font-size:150%;
+	text-align: center;
+	line-height: 60px;
+	height: 60px;
+}
+.uiwinfo {
+	margin-top: 20px;
+}
+.uiwinfo p, .uiwinfo dl {
+	text-indent: 2em;
+	text-align: left;
+}
+.uiwinfo-last {
+	margin-bottom: 10px;
+}
+.operation-type {
+}
+.operation-type li {
+	color:#666;
+	cursor:pointer;
+	font-size:110%;
+	float:left;
+	height:30px;
+	line-height:30px;
+	min-width:100px;
+	border:1px solid #ccc;
+	text-align:center;
+}
+.business-license {
+	width:410px;
+	float:left
+}
+.business-license span {
+	color:#999;
+	font-size:110%;
+	float:left;
+	line-height:20px;
+}
+.business-license span img {
+	height:90px;
+	width:90px;
+}
+/***user_config.php***/
+#devuserconfig{
+	width: 800px;
+	padding: 10px;
+	margin: 50px auto;
+	border: 1px solid #ccc;
+	color: inherit;
+	background: #fff;
+	box-shadow: 5px 5px 5px #ccc;
+}
+.ucwrap {
+	background-color:#eee;
+	text-align:center;
+	padding: 10px;
+}
+.ucwrap h1{
+	border-bottom:1px solid #fff;
+	color: #666;
+	font-size:150%;
+	text-align: center;
+	line-height: 60px;
+	height: 60px;
+}
+.ucinfo {
+	margin-top: 20px;
+}
+.ucinfo p, .ucinfo dl {
+	text-indent: 2em;
+	text-align: left;
+}
+.ucinfo-last {
+	margin-bottom: 10px;
+}
+.business-license {
+	width:410px;
+	float:left
+}
+.business-license span {
+	color:#999;
+	font-size:110%;
+	float:left;
+	line-height:20px;
+}
+.business-license span img {
+	height:90px;
+	width:90px;
+}

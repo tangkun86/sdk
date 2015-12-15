@@ -1,0 +1,32 @@
+﻿/*
+* 名称: global
+* 功能: 重设浏览器默认样式
+* developer:顽主
+* Email:cometous@126.com 
+* Copyright © 2013 - 远航
+* Date:2013-03-12
+*/
+@charset "utf-8";
+.clear:after {clear: both;content: " ";display: block;font-size: 0;height: 0;visibility: hidden;}
+html,body{ background:#eee;padding: 0;margin: 0;}
+body{ background:url(../img/bodyBg1.png) repeat;}
+.layout{ bottom: 0;left: 0;position: absolute;right: 0;top: 0;}
+
+.borderLine{ background:url(borderLine.gif) repeat-x; height:1px; position:fixed; bottom:0;}
+/* 统一内外边距 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {margin:0;padding:0;}
+/* 重设 HTML5 标签*/
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display:block;}
+/* HTML5 媒体文件跟 img 保持一致 */
+audio,canvas,video {display: inline-block;*display: inline;*zoom: 1;}
+/* 重置元素内字体、大小、行高的统一性 */
+body,button,input,select,textarea,option{ font-size:12px;font-family:Verdana, Geneva, sans-serif;}
+ol,ul {list-style:none;}
+a{ text-decoration:none;}
+.fL{ float:left;}
+.fR{ float:right;}
+/*button*/
+.grayBtn{ background:#e6e6e6 url(../img/grayBtnBg.png) repeat-x top; border:1px solid #aaaaaa;border-radius:3px; color:#666; cursor:pointer; font-size:14px; text-shadow:1px 1px 1px #fff; text-align:center; box-shadow:1px 1px 1px #eee;}
+.grayPadding{ padding:5px 15px; margin-left:15px;}
+.grayBtn:hover{ background:#fff;}
+.editBookPadding{ padding:0px 5px; margin-left:15px;}

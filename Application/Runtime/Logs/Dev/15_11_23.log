@@ -1,0 +1,421 @@
+[ 2015-11-23T15:24:00+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000522s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003460s ]
+NOTIC: [2] Illegal string offset 'app_id' E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 34 行.
+NOTIC: [2] Illegal string offset 'iap_key' E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 34 行.
+NOTIC: [2] Illegal string offset 'mnc' E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 34 行.
+NOTIC: [2] Illegal string offset 'macaddress' E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 34 行.
+NOTIC: [2] Illegal string offset 'imsi' E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 34 行.
+NOTIC: [2] Illegal string offset 'imei' E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 34 行.
+NOTIC: [2] Illegal string offset 'timestamp' E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 34 行.
+NOTIC: [2] Illegal string offset 'sign' E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 35 行.
+
+[ 2015-11-23T15:24:15+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000724s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000753s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003249s ]
+NOTIC: [2] Illegal string offset 'app_id' E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 34 行.
+NOTIC: [2] Illegal string offset 'iap_key' E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 34 行.
+NOTIC: [2] Illegal string offset 'mnc' E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 34 行.
+NOTIC: [2] Illegal string offset 'macaddress' E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 34 行.
+NOTIC: [2] Illegal string offset 'imsi' E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 34 行.
+NOTIC: [2] Illegal string offset 'imei' E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 34 行.
+NOTIC: [2] Illegal string offset 'timestamp' E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 34 行.
+NOTIC: [2] Illegal string offset 'sign' E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 35 行.
+
+[ 2015-11-23T15:28:35+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000069s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001256s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001018s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004030s ]
+
+[ 2015-11-23T16:18:08+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000925s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003167s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004094s ]
+
+[ 2015-11-23T16:19:02+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000913s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000978s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005397s ]
+
+[ 2015-11-23T16:20:02+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000933s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000691s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002451s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003430s ]
+
+[ 2015-11-23T16:22:48+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000549s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003195s ]
+
+[ 2015-11-23T16:23:30+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000851s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000688s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003249s ]
+
+[ 2015-11-23T16:25:08+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000785s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001436s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004974s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006744s ]
+
+[ 2015-11-23T16:25:51+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000721s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003091s ]
+
+[ 2015-11-23T17:14:03+08:00 ] 127.0.0.1 /Dev/Api/check_charge_result
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000081s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001176s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002761s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004318s ]
+
+[ 2015-11-23T17:16:41+08:00 ] 127.0.0.1 /Dev/Api/check_charge_result
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000628s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000891s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004513s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0568s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('TEST','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"timestamp\":\"1234567890\",\"sign\":\"4c6eab6028de8fde534392b879352f3a\",\"order_key\":\"jfwx575F24882E4DDFB1E93012244E7887CC\"}   ','1448270201') [ RunTime:0.0394s ]
+NOTIC: [2] Illegal string offset 'order_key' E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 155 行.
+
+[ 2015-11-23T17:18:53+08:00 ] 127.0.0.1 /Dev/Api/check_charge_result
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001278s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000952s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002699s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003924s ]
+NOTIC: [2] Illegal string offset 'order_key' E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 154 行.
+
+[ 2015-11-23T17:19:49+08:00 ] 127.0.0.1 /Dev/Api/check_charge_result
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000372s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002915s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003794s ]
+
+[ 2015-11-23T17:20:22+08:00 ] 127.0.0.1 /Dev/Api/check_charge_result
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000956s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000824s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003898s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005077s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `statistics` WHERE `order_key` = 'jfwx575F24882E4DDFB1E93012244E7887CC' LIMIT 1   [ RunTime:0.0352s ]
+
+[ 2015-11-23T17:23:02+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004375s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0556s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0232s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0283s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46000' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = null LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-23T17:26:07+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000614s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000809s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002670s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003739s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0038s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46000' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = null LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2015-11-23T17:26:19+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001136s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000874s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002721s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003904s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0049s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46000' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = null LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2015-11-23T17:29:08+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000088s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001533s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003095s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0040s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46000' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = null LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-11-23T17:31:37+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000585s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000636s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003301s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0049s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46000' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = null LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2015-11-23T17:33:16+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000562s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000632s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003999s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004854s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0061s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46000' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-11-23T17:33:32+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001636s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001538s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002844s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004780s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0043s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46000' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2015-11-23T17:34:02+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000809s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003924s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0048s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46000' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2015-11-23T17:34:44+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002206s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000928s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003950s ]
+
+[ 2015-11-23T17:37:26+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000893s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004087s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004956s ]
+
+[ 2015-11-23T17:38:16+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000764s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003605s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0050s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2015-11-23T17:38:33+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000721s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000550s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003653s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0043s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0007s ]
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5','36','16','','0','46001','T00','test','0','0','RM','20151123173833','1448271513','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwx81B30C4F2A073B6FCEEC3B3EAABCCB83') [ RunTime:0.1091s ]
+SQL: UPDATE `statistics` SET `fee`='0',`mobile`='',`status`='1' WHERE `id` = 273 [ RunTime:0.0154s ]
+
+[ 2015-11-23T17:40:40+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000542s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000827s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003444s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0047s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5','36','16','','0','46001','T00','test','0','0','RM','20151123174040','1448271640','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwxD62ECC225F2778C4AE1DFFD5A33C0AC6') [ RunTime:0.0562s ]
+SQL: UPDATE `statistics` SET `fee`='0',`mobile`='',`status`='1' WHERE `id` = 274 [ RunTime:0.0166s ]
+
+[ 2015-11-23T17:42:43+08:00 ] 127.0.0.1 /Dev/Api/prepay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000884s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003205s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004134s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0036s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0065s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5','36','16','','0','46001','T00','test','0','0','RM','20151123174243','1448271763','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwxB9B89A9DFCD6465D881928377B922E39') [ RunTime:0.0307s ]
+SQL: UPDATE `statistics` SET `fee`='0',`mobile`='',`status`='1' WHERE `id` = 275 [ RunTime:0.0163s ]
+NOTIC: [2] Illegal string offset 'timestamp' E:\Wnmp\noobird\Application\Dev\Controller\CtcclttxController.class.php 第 38 行.
+NOTIC: [2] Illegal string offset 'app_id' E:\Wnmp\noobird\Application\Dev\Controller\CtcclttxController.class.php 第 39 行.
+NOTIC: [2] Illegal string offset 'iap_name' E:\Wnmp\noobird\Application\Dev\Controller\CtcclttxController.class.php 第 39 行.
+NOTIC: [2] Illegal string offset 'fee' E:\Wnmp\noobird\Application\Dev\Controller\CtcclttxController.class.php 第 39 行.
+NOTIC: [2] Illegal string offset 'order_key' E:\Wnmp\noobird\Application\Dev\Controller\CtcclttxController.class.php 第 39 行.
+NOTIC: [2] Illegal string offset 'behavior_status' E:\Wnmp\noobird\Application\Dev\Controller\CtcclttxController.class.php 第 39 行.
+NOTIC: [2] Illegal string offset 'timestamp' E:\Wnmp\noobird\Application\Dev\Controller\CtcclttxController.class.php 第 39 行.
+NOTIC: [2] Illegal string offset 'sign' E:\Wnmp\noobird\Application\Dev\Controller\CtcclttxController.class.php 第 39 行.
+

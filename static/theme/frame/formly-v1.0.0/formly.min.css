@@ -1,0 +1,36 @@
+.formlyAlerts {
+	margin: 25px 0;
+}
+.formlyAlert {
+	
+}
+.formlyWrapper-Base input[type="text"], .formlyWrapper-Base input[type="password"], .formlyWrapper-Base input[type="checkbox"], .formlyWrapper-Base select, .formlyWrapper-Base textarea {
+	border: 1px solid #cccccc;
+}
+.formlyWrapper-Base hr {
+	background: #222;
+	color: #222;
+	border: 1px solid#222;
+}
+.formlyPrefix {
+	position: absolute;
+	float: left;
+	z-index: 9999;
+	display: none;
+}
+.formlyInvalid, .formlyRequired {
+	padding: 5px 10px;
+	font-size: 12px;
+	display: none;
+	margin: 5px 0;
+}
+.formlyInvalid {
+	background: #ffaa00;
+	color: #fff;
+	border: 1px solid #ccc;
+}
+.formlyRequired {
+	background: #8c8c8c;
+	color: #fff;
+	border: 1px solid #ccc;
+}

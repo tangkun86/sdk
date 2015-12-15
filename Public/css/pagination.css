@@ -1,0 +1,55 @@
+@charset "utf-8";
+#pages {
+    height: 36px;
+}
+#pages span {
+    width: 18px;
+    height: 18px;
+}
+#pages a {
+	min-width: 18px;
+	min-height: 18px;
+    width: auto;
+    height: auto;
+    background: #f1f1f1;
+    display: block;
+    color: #a9a9a9;
+    line-height: 36px;
+    text-align: center;
+    float: left;
+	padding: 0 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.2s ease-out;
+    cursor: pointer;
+}
+#pages a#pageactive {
+    background: #70ca10;
+    color: #fff;
+}
+#pages a:hover {
+    background: #969696;
+    color: #fff;
+}
+
+.pageprev {
+    position: relative;
+    top: 5px; left: -2px;
+    display: inline-block;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-image: url(../images/yy-icon.png);;
+    background-position: -120px -656px;
+}
+.pagenext {
+    position: relative;
+    top: 5px; left: 2px;
+    display: inline-block;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-image: url(../images/yy-icon.png);
+    background-position: -120px -656px;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg)
+}

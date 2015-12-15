@@ -1,0 +1,1508 @@
+[ 2015-11-16T09:53:09+08:00 ] 127.0.0.1 /Dev/Api/applyOrderRoute?apply_pay=d34d5a3d37e8be3d2bc599b2c4dd5615bc5cebc7f1135577bb12c41bfa298c601fed4b8f9510cf3c0958fc9bc5ab15b02b2c1bc1159bc8329cc46f5bae1fe915021c5878177ac1bebe35ac09f5bc7b72df0b19b8b8c50d8caf763bffb915d86d3723b20e91647fcc1b6c5e00e9e3cd9fd0dc91ddf78ea4946a0f21203d7192ff156b4232dc3dec315b1ecefabeb2835bf4b59f9c6c4cfe6f9b21dc9d6f11dc151c9aa820691d8b9103167a29744b37231e1bca1874ab16ded0c7e8f7fda883f0f9156326ebd402c19df418a824d440738863b37ce7b63b33bfabe7e071a814a6ff3ddd0c00706b4087ca9bbbcb7af8572d7d37ce945b9ad21bb0563293a3ea612ae3f8704c53ede9051e3b77c43248ba
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000623s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000764s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002676s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003727s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0705s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"192.168.1.102\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}         ','1447638788') [ RunTime:0.0396s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0327s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0289s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0289s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0244s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0241s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0381s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116095308','1447638788','5','192168001102','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwxAB0E6F467307160E8CFBDB58B86305C9') [ RunTime:0.0325s ]
+
+[ 2015-11-16T09:55:44+08:00 ] 192.168.1.55 /Dev/Api/applyOrderRoute
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000968s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001073s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003934s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005309s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0068s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"10.146.66.46\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}          ','1447638944') [ RunTime:0.0412s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0059s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116095544','1447638944','5','010146066046','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwx21F5AF4CCD6A958D5AA3BA5DC88C0960') [ RunTime:0.0130s ]
+
+[ 2015-11-16T09:58:24+08:00 ] 192.168.1.55 /Dev/Api/applyOrderRoute
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000079s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000754s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003651s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0060s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"192.168.137.104\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}       ','1447639104') [ RunTime:0.3231s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0084s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116095824','1447639104','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwxC97C97A097E0F1FA0B18AE6AED00E8B2') [ RunTime:0.0407s ]
+
+[ 2015-11-16T14:26:04+08:00 ] 192.168.1.55 /Dev/Api/applyOrderRoute
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000669s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000971s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002937s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004179s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0038s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"10.146.194.184\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}        ','1447655164') [ RunTime:0.0231s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0046s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116142604','1447655164','5','010146194184','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwxE2B09B6988C5E9067F7C000F61987104') [ RunTime:0.0319s ]
+
+[ 2015-11-16T14:27:52+08:00 ] 192.168.1.211 /Dev
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000576s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000752s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002371s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003298s ]
+
+[ 2015-11-16T14:27:52+08:00 ] 192.168.1.211 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000604s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000873s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003647s ]
+NOTIC: [8] Undefined variable: error E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 8 行.
+NOTIC: [2] include(./Application/Dev/Layout/footer/Users/views.php): failed to open stream: No such file or directory E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+NOTIC: [2] include(): Failed opening './Application/Dev/Layout/footer/Users/views.php' for inclusion (include_path='.;C:\php\pear') E:\Wnmp\noobird\Application\Dev\View\Users\loginDev.php 第 29 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000762s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000842s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000952s ]
+
+[ 2015-11-16T14:28:06+08:00 ] 192.168.1.211 /Dev/Users/loginDev.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000080s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001769s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002567s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008583s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `users` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `developers` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2015-11-16T14:28:06+08:00 ] 192.168.1.211 /Dev/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000756s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003296s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `users` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `developers` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `applications` WHERE `user_id` = 1 AND `status` <> 0 ORDER BY id desc LIMIT 0,5   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0045s ]
+SQL: SELECT SUM(fee) as total,S.application_id,A.name FROM statistics S INNER JOIN applications A on S.application_id=A.id  WHERE (  S.user_id=1 and S.status=1 ) GROUP BY S.application_id  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 13 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 14 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+NOTIC: [8] Trying to get property of non-object E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000770s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000810s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000919s ]
+
+[ 2015-11-16T14:28:10+08:00 ] 192.168.1.211 /Dev/Applications/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000589s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003354s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `applications` WHERE `status` > 0 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 194 行.
+SQL: SELECT * FROM `applications` WHERE `status` > 0 AND `user_id` = 1 ORDER BY `id` asc LIMIT 0,10   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Applications\index.php 第 51 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000713s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000858s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001013s ]
+
+[ 2015-11-16T14:28:12+08:00 ] 192.168.1.211 /Dev/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000563s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000779s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003412s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `users` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `developers` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `applications` WHERE `user_id` = 1 AND `status` <> 0 ORDER BY id desc LIMIT 0,5   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0038s ]
+SQL: SELECT SUM(fee) as total,S.application_id,A.name FROM statistics S INNER JOIN applications A on S.application_id=A.id  WHERE (  S.user_id=1 and S.status=1 ) GROUP BY S.application_id  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 13 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 14 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+NOTIC: [8] Trying to get property of non-object E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000623s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000738s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000804s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000921s ]
+
+[ 2015-11-16T14:28:13+08:00 ] 192.168.1.211 /Dev/Applications/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000786s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001131s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005067s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0054s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `applications` WHERE `status` > 0 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 194 行.
+SQL: SELECT * FROM `applications` WHERE `status` > 0 AND `user_id` = 1 ORDER BY `id` asc LIMIT 0,10   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Applications\index.php 第 51 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000715s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000744s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000852s ]
+
+[ 2015-11-16T14:28:14+08:00 ] 192.168.1.211 /Dev/Iaps/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001055s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001457s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004739s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006557s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0036s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(I.id) AS tp_count FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\IapsController.class.php 第 39 行.
+SQL: SELECT I.id,I.name,A.status,I.iap_key,I.pay_code,I.created,I.status,`application_id`,`app_id`,A.name AS app_name FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 ORDER BY A.status asc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0037s ]
+SQL: SELECT D.user_id,`username`,`company_name` FROM developers D INNER JOIN users u ON D.user_id=u.id   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 18 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 19 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 20 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 21 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 22 行.
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 76 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000888s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001104s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001176s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001395s ]
+
+[ 2015-11-16T14:28:14+08:00 ] 192.168.1.211 /Dev/Iaps/select.htc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001484s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004093s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005891s ]
+
+[ 2015-11-16T14:28:14+08:00 ] 192.168.1.211 /Dev/Iaps/fancybox/fancy_shadow_n.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+
+[ 2015-11-16T14:28:14+08:00 ] 192.168.1.211 /Dev/Iaps/fancybox/fancy_shadow_ne.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000994s ]
+
+[ 2015-11-16T14:28:14+08:00 ] 192.168.1.211 /Dev/Iaps/select.htc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001288s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005230s ]
+
+[ 2015-11-16T14:28:14+08:00 ] 192.168.1.211 /Dev/Iaps/fancybox/fancy_shadow_e.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000534s ]
+
+[ 2015-11-16T14:28:14+08:00 ] 192.168.1.211 /Dev/Iaps/fancybox/fancy_shadow_se.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+
+[ 2015-11-16T14:28:14+08:00 ] 192.168.1.211 /Dev/Iaps/fancybox/fancy_shadow_s.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000841s ]
+
+[ 2015-11-16T14:28:14+08:00 ] 192.168.1.211 /Dev/Iaps/fancybox/fancy_shadow_sw.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000507s ]
+
+[ 2015-11-16T14:28:14+08:00 ] 192.168.1.211 /Dev/Iaps/fancybox/fancy_shadow_w.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+
+[ 2015-11-16T14:28:14+08:00 ] 192.168.1.211 /Dev/Iaps/fancybox/fancy_shadow_nw.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000518s ]
+
+[ 2015-11-16T14:28:14+08:00 ] 192.168.1.211 /Dev/Iaps/select.htc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000740s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000757s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003443s ]
+
+[ 2015-11-16T14:28:15+08:00 ] 192.168.1.211 /Dev/Statistics/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000803s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001147s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004805s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0039s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(S.id) AS tp_count FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.user_id LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\StatisticsController.class.php 第 39 行.
+SQL: SELECT SUM(S.fee) as total,S.application_id,A.app_id,A.name FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.application_id LIMIT 0,10   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined index:  E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined variable: start E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 13 行.
+NOTIC: [8] Undefined variable: end E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000543s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000658s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000907s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001054s ]
+
+[ 2015-11-16T14:28:15+08:00 ] 192.168.1.211 /Dev/Statistics/statIap.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001402s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006282s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0066s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(S.id) AS tp_count FROM statistics S 
+            LEFT JOIN users u ON S.user_id=u.id
+            LEFT JOIN applications A ON S.application_id=A.id
+            LEFT JOIN developers D ON S.user_id=D.user_id
+            LEFT JOIN iaps I ON S.iap_id=I.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.iap_id LIMIT 1   [ RunTime:0.0012s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\StatisticsController.class.php 第 91 行.
+SQL: SELECT SUM(S.fee) as total,S.status,S.application_id,A.name,A.app_id,D.company_name,u.username,A.user_id,I.name as iap_name,I.iap_key FROM statistics S 
+            LEFT JOIN users u ON S.user_id=u.id
+            LEFT JOIN applications A ON S.application_id=A.id
+            LEFT JOIN developers D ON S.user_id=D.user_id
+            LEFT JOIN iaps I ON S.iap_id=I.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.iap_id ORDER BY `total` desc LIMIT 0,10   [ RunTime:0.0012s ]
+NOTIC: [8] Undefined index: app_id E:\Wnmp\noobird\Application\Dev\Controller\ComController.class.php 第 35 行.
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0041s ]
+SQL: SELECT `id`,`name`,`app_id`,`app_key`,`desc` FROM `applications` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: appId E:\Wnmp\noobird\Application\Dev\View\Statistics\statIap.php 第 15 行.
+NOTIC: [8] Undefined variable: start E:\Wnmp\noobird\Application\Dev\View\Statistics\statIap.php 第 19 行.
+NOTIC: [8] Undefined variable: end E:\Wnmp\noobird\Application\Dev\View\Statistics\statIap.php 第 21 行.
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Statistics\statIap.php 第 51 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000927s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001041s ]
+
+[ 2015-11-16T14:28:15+08:00 ] 192.168.1.211 /Dev/Statistics/select.htc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000069s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001890s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005608s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007951s ]
+
+[ 2015-11-16T14:28:15+08:00 ] 192.168.1.211 /Dev/Statistics/select.htc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000804s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000969s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003003s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004200s ]
+
+[ 2015-11-16T14:28:15+08:00 ] 192.168.1.211 /Dev/Statistics/select.htc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000555s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003184s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004161s ]
+
+[ 2015-11-16T14:28:16+08:00 ] 192.168.1.211 /Dev/Statistics/statDetail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000078s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001551s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002249s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.010242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013293s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0046s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(S.id) AS tp_count FROM statistics S 
+            LEFT JOIN users u ON S.user_id=u.id
+            LEFT JOIN applications A ON S.application_id=A.id
+            LEFT JOIN developers D ON S.user_id=D.user_id
+            LEFT JOIN iaps I ON S.iap_id=I.id
+          WHERE S.status > 0 AND S.user_id = 1 LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\StatisticsController.class.php 第 144 行.
+SQL: SELECT S.mobile,S.application_id,S.created,S.fee,S.status,S.client_status,S.operator,A.name,D.company_name,u.username,A.app_id,S.user_id,I.name as iap_name,I.iap_key FROM statistics S 
+            LEFT JOIN users u ON S.user_id=u.id
+            LEFT JOIN applications A ON S.application_id=A.id
+            LEFT JOIN developers D ON S.user_id=D.user_id
+            LEFT JOIN iaps I ON S.iap_id=I.id
+          WHERE S.status > 0 AND S.user_id = 1 ORDER BY `created` desc LIMIT 0,10   [ RunTime:0.0012s ]
+NOTIC: [8] Undefined index: app_id E:\Wnmp\noobird\Application\Dev\Controller\ComController.class.php 第 35 行.
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0055s ]
+SQL: SELECT `id`,`name`,`app_id`,`app_key`,`desc` FROM `applications` WHERE `user_id` = 1  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: appId E:\Wnmp\noobird\Application\Dev\View\Statistics\statDetail.php 第 8 行.
+NOTIC: [8] Undefined variable: start E:\Wnmp\noobird\Application\Dev\View\Statistics\statDetail.php 第 19 行.
+NOTIC: [8] Undefined variable: end E:\Wnmp\noobird\Application\Dev\View\Statistics\statDetail.php 第 21 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000663s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000882s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001059s ]
+
+[ 2015-11-16T14:28:16+08:00 ] 192.168.1.211 /Dev/Statistics/select.htc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001768s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.006523s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008745s ]
+
+[ 2015-11-16T14:28:16+08:00 ] 192.168.1.211 /Dev/Statistics/select.htc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000067s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001226s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001681s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005794s ]
+
+[ 2015-11-16T14:28:16+08:00 ] 192.168.1.211 /Dev/Statistics/select.htc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000564s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000857s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002461s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003558s ]
+
+[ 2015-11-16T14:28:17+08:00 ] 192.168.1.211 /Dev/Statistics/statIap.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000991s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001340s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004375s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006061s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0037s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(S.id) AS tp_count FROM statistics S 
+            LEFT JOIN users u ON S.user_id=u.id
+            LEFT JOIN applications A ON S.application_id=A.id
+            LEFT JOIN developers D ON S.user_id=D.user_id
+            LEFT JOIN iaps I ON S.iap_id=I.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.iap_id LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\StatisticsController.class.php 第 91 行.
+SQL: SELECT SUM(S.fee) as total,S.status,S.application_id,A.name,A.app_id,D.company_name,u.username,A.user_id,I.name as iap_name,I.iap_key FROM statistics S 
+            LEFT JOIN users u ON S.user_id=u.id
+            LEFT JOIN applications A ON S.application_id=A.id
+            LEFT JOIN developers D ON S.user_id=D.user_id
+            LEFT JOIN iaps I ON S.iap_id=I.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.iap_id ORDER BY `total` desc LIMIT 0,10   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: app_id E:\Wnmp\noobird\Application\Dev\Controller\ComController.class.php 第 35 行.
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0041s ]
+SQL: SELECT `id`,`name`,`app_id`,`app_key`,`desc` FROM `applications` WHERE `user_id` = 1  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: appId E:\Wnmp\noobird\Application\Dev\View\Statistics\statIap.php 第 15 行.
+NOTIC: [8] Undefined variable: start E:\Wnmp\noobird\Application\Dev\View\Statistics\statIap.php 第 19 行.
+NOTIC: [8] Undefined variable: end E:\Wnmp\noobird\Application\Dev\View\Statistics\statIap.php 第 21 行.
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Statistics\statIap.php 第 51 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000603s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000715s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000786s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000894s ]
+
+[ 2015-11-16T14:28:17+08:00 ] 192.168.1.211 /Dev/Statistics/select.htc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001551s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004970s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006862s ]
+
+[ 2015-11-16T14:28:17+08:00 ] 192.168.1.211 /Dev/Statistics/select.htc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000528s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001538s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003061s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004843s ]
+
+[ 2015-11-16T14:28:18+08:00 ] 192.168.1.211 /Dev/Statistics/select.htc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000826s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002541s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003555s ]
+
+[ 2015-11-16T14:28:18+08:00 ] 192.168.1.211 /Dev/Statistics/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000958s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003140s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004359s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0043s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(S.id) AS tp_count FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.user_id LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\StatisticsController.class.php 第 39 行.
+SQL: SELECT SUM(S.fee) as total,S.application_id,A.app_id,A.name FROM statistics S 
+            LEFT JOIN applications A ON S.application_id=A.id
+          WHERE S.status = 1 AND S.user_id = 1 GROUP BY S.application_id LIMIT 0,10   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined index:  E:\Wnmp\noobird\Application\Dev\Model\CModel.class.php 第 24 行.
+NOTIC: [8] Undefined variable: start E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 13 行.
+NOTIC: [8] Undefined variable: end E:\Wnmp\noobird\Application\Dev\View\Statistics\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000616s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000736s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000773s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000905s ]
+
+[ 2015-11-16T14:28:19+08:00 ] 192.168.1.211 /Dev/Iaps/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000078s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001564s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002419s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.007694s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010667s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0060s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SELECT COUNT(I.id) AS tp_count FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\IapsController.class.php 第 39 行.
+SQL: SELECT I.id,I.name,A.status,I.iap_key,I.pay_code,I.created,I.status,`application_id`,`app_id`,A.name AS app_name FROM iaps I 
+            LEFT JOIN applications A ON I.application_id=A.id
+          WHERE I.status > 0 AND I.user_id = 1 ORDER BY A.status asc LIMIT 0,10   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0043s ]
+SQL: SELECT D.user_id,`username`,`company_name` FROM developers D INNER JOIN users u ON D.user_id=u.id   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 18 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 19 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 20 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 21 行.
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 22 行.
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Iaps\index.php 第 76 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000755s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000811s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000934s ]
+
+[ 2015-11-16T14:28:19+08:00 ] 192.168.1.211 /Dev/Iaps/select.htc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000878s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001231s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005971s ]
+
+[ 2015-11-16T14:28:19+08:00 ] 192.168.1.211 /Dev/Iaps/select.htc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000589s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000763s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003503s ]
+
+[ 2015-11-16T14:28:19+08:00 ] 192.168.1.211 /Dev/Iaps/select.htc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000595s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000760s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002403s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003359s ]
+
+[ 2015-11-16T14:28:19+08:00 ] 192.168.1.211 /Dev/Applications/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000627s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000965s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002967s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004166s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0043s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `applications` WHERE `status` > 0 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 194 行.
+SQL: SELECT * FROM `applications` WHERE `status` > 0 AND `user_id` = 1 ORDER BY `id` asc LIMIT 0,10   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Applications\index.php 第 51 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000791s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000998s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000897s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001017s ]
+
+[ 2015-11-16T14:28:20+08:00 ] 192.168.1.211 /Dev/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001121s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001255s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003718s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005275s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `users` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `developers` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `applications` WHERE `user_id` = 1 AND `status` <> 0 ORDER BY id desc LIMIT 0,5   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0040s ]
+SQL: SELECT SUM(fee) as total,S.application_id,A.name FROM statistics S INNER JOIN applications A on S.application_id=A.id  WHERE (  S.user_id=1 and S.status=1 ) GROUP BY S.application_id  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 13 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 14 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+NOTIC: [8] Trying to get property of non-object E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000719s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000788s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000896s ]
+
+[ 2015-11-16T14:28:21+08:00 ] 192.168.1.211 /Dev
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001006s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000836s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003503s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `users` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `developers` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `applications` WHERE `user_id` = 1 AND `status` <> 0 ORDER BY id desc LIMIT 0,5   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0038s ]
+SQL: SELECT SUM(fee) as total,S.application_id,A.name FROM statistics S INNER JOIN applications A on S.application_id=A.id  WHERE (  S.user_id=1 and S.status=1 ) GROUP BY S.application_id  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 13 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 14 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+NOTIC: [8] Trying to get property of non-object E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000741s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000781s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000905s ]
+
+[ 2015-11-16T14:28:23+08:00 ] 192.168.1.211 /Dev/dev/setting.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000080s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001659s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001531s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005466s ]
+ERR: 非法操作:setting
+
+[ 2015-11-16T14:28:27+08:00 ] 192.168.1.211 /Dev/dev/setting.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001056s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001755s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005145s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007282s ]
+ERR: 非法操作:setting
+
+[ 2015-11-16T14:28:27+08:00 ] 192.168.1.211 /Dev/dev/setting.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000885s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001369s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005943s ]
+ERR: 非法操作:setting
+
+[ 2015-11-16T14:28:28+08:00 ] 192.168.1.211 /Dev/dev/setting.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000640s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000847s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002960s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004068s ]
+ERR: 非法操作:setting
+
+[ 2015-11-16T14:28:28+08:00 ] 192.168.1.211 /Dev/dev/setting.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000748s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001028s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003526s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004816s ]
+ERR: 非法操作:setting
+
+[ 2015-11-16T14:28:28+08:00 ] 192.168.1.211 /Dev/dev/setting.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000080s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001590s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003153s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.007859s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011546s ]
+ERR: 非法操作:setting
+
+[ 2015-11-16T14:28:34+08:00 ] 192.168.1.211 /Dev
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000699s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001069s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004873s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `users` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `developers` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `applications` WHERE `user_id` = 1 AND `status` <> 0 ORDER BY id desc LIMIT 0,5   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0046s ]
+SQL: SELECT SUM(fee) as total,S.application_id,A.name FROM statistics S INNER JOIN applications A on S.application_id=A.id  WHERE (  S.user_id=1 and S.status=1 ) GROUP BY S.application_id  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 13 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 14 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+NOTIC: [8] Trying to get property of non-object E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000696s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000791s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000898s ]
+
+[ 2015-11-16T14:28:39+08:00 ] 192.168.1.211 /Dev/l/zh-cn.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000901s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001200s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003979s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005479s ]
+ERR: 非法操作:zh-cn
+
+[ 2015-11-16T14:28:40+08:00 ] 192.168.1.211 /Dev/l/zh-cn.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000827s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001209s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003881s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005398s ]
+ERR: 非法操作:zh-cn
+
+[ 2015-11-16T14:28:46+08:00 ] 192.168.1.211 /Dev
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001086s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001425s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004597s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006407s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `users` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `developers` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `developers` WHERE `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `applications` WHERE `user_id` = 1 AND `status` <> 0 ORDER BY id desc LIMIT 0,5   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0038s ]
+SQL: SELECT SUM(fee) as total,S.application_id,A.name FROM statistics S INNER JOIN applications A on S.application_id=A.id  WHERE (  S.user_id=1 and S.status=1 ) GROUP BY S.application_id  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 13 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 14 行.
+NOTIC: [8] Undefined variable: developer E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+NOTIC: [8] Trying to get property of non-object E:\Wnmp\noobird\Application\Dev\View\Index\index.php 第 15 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000799s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000924s ]
+
+[ 2015-11-16T14:29:12+08:00 ] 192.168.1.211 /Dev/Applications/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001405s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005367s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0044s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `applications` WHERE `status` > 0 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 194 行.
+SQL: SELECT * FROM `applications` WHERE `status` > 0 AND `user_id` = 1 ORDER BY `id` asc LIMIT 0,10   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Applications\index.php 第 51 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000721s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000830s ]
+
+[ 2015-11-16T14:47:04+08:00 ] 192.168.1.55 /Dev/Api/applyOrderRoute
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000927s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001698s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003092s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005062s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0052s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"192.168.137.104\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}       ','1447656424') [ RunTime:0.0569s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0117s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0135s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0106s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116144704','1447656424','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwx25D94B9B2F0AB353110C48A4A746AAFB') [ RunTime:0.0134s ]
+
+[ 2015-11-16T14:52:05+08:00 ] 192.168.1.55 /Dev/Api/applyOrderRoute
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000732s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002661s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003587s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0040s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"10.160.129.126\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}        ','1447656725') [ RunTime:0.0563s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0042s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116145205','1447656725','5','010160129126','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwx594E6540D752191D84F3F0015D17A315') [ RunTime:0.0148s ]
+
+[ 2015-11-16T14:52:36+08:00 ] 192.168.1.55 /Dev/Api/applyOrderRoute
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000610s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000853s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002851s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004348s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0046s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"192.168.137.104\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}       ','1447656756') [ RunTime:0.0627s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0039s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116145236','1447656756','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwx9732534AD0F562DDF1B2E088AD923C8B') [ RunTime:0.0128s ]
+
+[ 2015-11-16T14:55:08+08:00 ] 192.168.1.55 /Dev/Api/applyOrderRoute
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000836s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001099s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005032s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0037s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"192.168.137.104\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}       ','1447656908') [ RunTime:0.0404s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0057s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116145508','1447656908','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwxDF5C878F66A19253FCAEC66BE51EB7DF') [ RunTime:0.0147s ]
+
+[ 2015-11-16T14:56:13+08:00 ] 192.168.1.55 /Dev/Api/applyOrderRoute
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000828s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001174s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005233s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0042s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"10.160.4.197\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}          ','1447656973') [ RunTime:0.0532s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0035s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116145613','1447656973','5','010160004197','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwx98C254E8B58221C09B9707918DA4F5B6') [ RunTime:0.0125s ]
+
+[ 2015-11-16T14:56:20+08:00 ] 192.168.1.55 /Dev/Api/applyOrderRoute
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000590s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000714s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002172s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003117s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0036s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"192.168.137.104\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}       ','1447656980') [ RunTime:0.0454s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0048s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116145620','1447656980','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwx6731808F4AE7F72A03BEF8CACD4C245F') [ RunTime:0.0180s ]
+
+[ 2015-11-16T14:57:50+08:00 ] 192.168.1.55 /Dev/Api/applyOrderRoute
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000973s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001307s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004098s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005747s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0036s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"192.168.137.104\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}       ','1447657070') [ RunTime:0.0759s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0036s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116145750','1447657070','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwx1DDA8E2CA278A160BE55A22CEA819621') [ RunTime:0.0153s ]
+
+[ 2015-11-16T14:57:57+08:00 ] 192.168.1.55 /Dev/Api/applyOrderRoute
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000949s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001225s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004066s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005609s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0056s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"192.168.137.104\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}       ','1447657077') [ RunTime:0.0591s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0043s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116145757','1447657077','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwxE48AF9DB421B3320B52699F089A543B3') [ RunTime:0.0183s ]
+
+[ 2015-11-16T14:59:19+08:00 ] 192.168.1.55 /Dev/Api/applyOrderRoute
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000735s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000963s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004237s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0038s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"192.168.137.104\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}       ','1447657158') [ RunTime:0.0373s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0036s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116145918','1447657158','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwxD3F86283FAAE71D12D371359D5D7ADAD') [ RunTime:0.0134s ]
+
+[ 2015-11-16T15:07:01+08:00 ] 127.0.0.1 /Dev/Api/applyOrderRoute?apply_pay=d34d5a3d37e8be3d2bc599b2c4dd5615bc5cebc7f1135577bb12c41bfa298c601fed4b8f9510cf3c0958fc9bc5ab15b02b2c1bc1159bc8329cc46f5bae1fe915021c5878177ac1bebe35ac09f5bc7b72df0b19b8b8c50d8caf763bffb915d86d7933c20003910937999a0672e72dc1bdb5fb51aba4851f2b5bf02fc477ea94a7cd8fc29328916e37a523d60560bf81d7c3ddf4f039d871db773e0deef09da8593a7ff4cda7eb16b20e8986a143e0edb2488d0d38632e0444cb7e523637a5421f68f1d94d20e4dc5671c46bec59d96e87cfc0bfe9331a5ba62e39197bca3bb8946b01d2e437264e60841883c4bdf83276d14f6666a2e68ba166562cca3f439a1e58315bac2f598a934bbef9be12807860
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000803s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000782s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004421s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0042s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"192.168.137.104\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}       ','1447657621') [ RunTime:0.0777s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0039s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116150701','1447657621','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwx25CE20B7F9E296030F08E42CDAC2FA26') [ RunTime:0.0114s ]
+
+[ 2015-11-16T15:11:06+08:00 ] 127.0.0.1 /Dev/Api/applyOrderRoute?apply_pay=d34d5a3d37e8be3d2bc599b2c4dd5615bc5cebc7f1135577bb12c41bfa298c601fed4b8f9510cf3c0958fc9bc5ab15b02b2c1bc1159bc8329cc46f5bae1fe915021c5878177ac1bebe35ac09f5bc7b72df0b19b8b8c50d8caf763bffb915d86d7933c20003910937999a0672e72dc1bdb5fb51aba4851f2b5bf02fc477ea94a7cd8fc29328916e37a523d60560bf81d7c3ddf4f039d871db773e0deef09da8593a7ff4cda7eb16b20e8986a143e0edb2488d0d38632e0444cb7e523637a5421f68f1d94d20e4dc5671c46bec59d96e87cfc0bfe9331a5ba62e39197bca3bb8946b01d2e437264e60841883c4bdf83276d14f6666a2e68ba166562cca3f439a1e58315bac2f598a934bbef9be12807860
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000659s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002694s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003672s ]
+
+[ 2015-11-16T15:14:36+08:00 ] 127.0.0.1 /Dev/Api/applyOrderRoute?apply_pay=d34d5a3d37e8be3d2bc599b2c4dd5615bc5cebc7f1135577bb12c41bfa298c601fed4b8f9510cf3c0958fc9bc5ab15b02b2c1bc1159bc8329cc46f5bae1fe915021c5878177ac1bebe35ac09f5bc7b72df0b19b8b8c50d8caf763bffb915d86d7933c20003910937999a0672e72dc1bdb5fb51aba4851f2b5bf02fc477ea94a7cd8fc29328916e37a523d60560bf81d7c3ddf4f039d871db773e0deef09da8593a7ff4cda7eb16b20e8986a143e0edb2488d0d38632e0444cb7e523637a5421f68f1d94d20e4dc5671c46bec59d96e87cfc0bfe9331a5ba62e39197bca3bb8946b01d2e437264e60841883c4bdf83276d14f6666a2e68ba166562cca3f439a1e58315bac2f598a934bbef9be12807860
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001049s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001073s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002946s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004389s ]
+
+[ 2015-11-16T15:15:18+08:00 ] 127.0.0.1 /Dev/Api/applyOrderRoute?apply_pay=d34d5a3d37e8be3d2bc599b2c4dd5615bc5cebc7f1135577bb12c41bfa298c601fed4b8f9510cf3c0958fc9bc5ab15b02b2c1bc1159bc8329cc46f5bae1fe915021c5878177ac1bebe35ac09f5bc7b72df0b19b8b8c50d8caf763bffb915d86d7933c20003910937999a0672e72dc1bdb5fb51aba4851f2b5bf02fc477ea94a7cd8fc29328916e37a523d60560bf81d7c3ddf4f039d871db773e0deef09da8593a7ff4cda7eb16b20e8986a143e0edb2488d0d38632e0444cb7e523637a5421f68f1d94d20e4dc5671c46bec59d96e87cfc0bfe9331a5ba62e39197bca3bb8946b01d2e437264e60841883c4bdf83276d14f6666a2e68ba166562cca3f439a1e58315bac2f598a934bbef9be12807860
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000901s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001206s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004899s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006497s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0060s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"192.168.137.104\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}       ','1447658118') [ RunTime:0.0560s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0036s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116151518','1447658118','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwxC00E7A210FEE497A7B737FC7B3C65BFE') [ RunTime:0.0116s ]
+NOTIC: [8] Undefined index: key E:\Wnmp\noobird\Application\Dev\Controller\CtcclttxController.class.php 第 43 行.
+SQL: INSERT INTO `logs` (`created`,`title`,`content`) VALUES ('1447658118','test','{\"resultCode\":\"2002\"}') [ RunTime:0.0164s ]
+
+[ 2015-11-16T15:18:55+08:00 ] 127.0.0.1 /Dev/Api/applyOrderRoute?apply_pay=d34d5a3d37e8be3d2bc599b2c4dd5615bc5cebc7f1135577bb12c41bfa298c601fed4b8f9510cf3c0958fc9bc5ab15b02b2c1bc1159bc8329cc46f5bae1fe915021c5878177ac1bebe35ac09f5bc7b72df0b19b8b8c50d8caf763bffb915d86d7933c20003910937999a0672e72dc1bdb5fb51aba4851f2b5bf02fc477ea94a7cd8fc29328916e37a523d60560bf81d7c3ddf4f039d871db773e0deef09da8593a7ff4cda7eb16b20e8986a143e0edb2488d0d38632e0444cb7e523637a5421f68f1d94d20e4dc5671c46bec59d96e87cfc0bfe9331a5ba62e39197bca3bb8946b01d2e437264e60841883c4bdf83276d14f6666a2e68ba166562cca3f439a1e58315bac2f598a934bbef9be12807860
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000855s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001254s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007168s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0036s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"192.168.137.104\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}       ','1447658334') [ RunTime:0.1793s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0135s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0136s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0054s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116151854','1447658334','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwx51FC0B8ADD9EF3243B0327CBA5E08333') [ RunTime:0.0083s ]
+NOTIC: [8] Undefined index: key E:\Wnmp\noobird\Application\Dev\Controller\CtcclttxController.class.php 第 43 行.
+SQL: INSERT INTO `logs` (`created`,`title`,`content`) VALUES ('1447658334','test','{\"resultCode\":\"2002\"}') [ RunTime:0.0222s ]
+
+[ 2015-11-16T15:21:26+08:00 ] 192.168.1.211 /Dev/Applications/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001345s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005818s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007558s ]
+NOTIC: [8] Undefined index: status E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0047s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `applications` WHERE `status` > 0 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: p E:\Wnmp\noobird\Application\Dev\Controller\CController.class.php 第 194 行.
+SQL: SELECT * FROM `applications` WHERE `status` > 0 AND `user_id` = 1 ORDER BY `id` asc LIMIT 0,10   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: page E:\Wnmp\noobird\Application\Dev\View\Applications\index.php 第 51 行.
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000710s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000777s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000894s ]
+
+[ 2015-11-16T15:27:31+08:00 ] 127.0.0.1 /Dev/Api/applyOrderRoute?apply_pay=d34d5a3d37e8be3d2bc599b2c4dd5615bc5cebc7f1135577bb12c41bfa298c601fed4b8f9510cf3c0958fc9bc5ab15b02b2c1bc1159bc8329cc46f5bae1fe915021c5878177ac1bebe35ac09f5bc7b72df0b19b8b8c50d8caf763bffb915d86d7933c20003910937999a0672e72dc1bdb5fb51aba4851f2b5bf02fc477ea94a7cd8fc29328916e37a523d60560bf81d7c3ddf4f039d871db773e0deef09da8593a7ff4cda7eb16b20e8986a143e0edb2488d0d38632e0444cb7e523637a5421f68f1d94d20e4dc5671c46bec59d96e87cfc0bfe9331a5ba62e39197bca3bb8946b01d2e437264e60841883c4bdf83276d14f6666a2e68ba166562cca3f439a1e58315bac2f598a934bbef9be12807860
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000851s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002045s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003005s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005423s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0043s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"192.168.137.104\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}       ','1447658850') [ RunTime:0.0622s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0037s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116152730','1447658850','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwx83AC19D8CD2D2BF4D308AAAE1950DFCC') [ RunTime:0.0332s ]
+NOTIC: [8] Undefined index: key E:\Wnmp\noobird\Application\Dev\Controller\CtcclttxController.class.php 第 43 行.
+SQL: INSERT INTO `logs` (`created`,`title`,`content`) VALUES ('1447658850','test','{\"resultCode\":\"2002\"}') [ RunTime:0.0122s ]
+
+[ 2015-11-16T15:47:36+08:00 ] 127.0.0.1 /Dev/Api/applyOrderRoute?apply_pay=d34d5a3d37e8be3d2bc599b2c4dd5615bc5cebc7f1135577bb12c41bfa298c601fed4b8f9510cf3c0958fc9bc5ab15b02b2c1bc1159bc8329cc46f5bae1fe915021c5878177ac1bebe35ac09f5bc7b72df0b19b8b8c50d8caf763bffb915d86d7933c20003910937999a0672e72dc1bdb5fb51aba4851f2b5bf02fc477ea94a7cd8fc29328916e37a523d60560bf81d7c3ddf4f039d871db773e0deef09da8593a7ff4cda7eb16b20e8986a143e0edb2488d0d38632e0444cb7e523637a5421f68f1d94d20e4dc5671c46bec59d96e87cfc0bfe9331a5ba62e39197bca3bb8946b01d2e437264e60841883c4bdf83276d14f6666a2e68ba166562cca3f439a1e58315bac2f598a934bbef9be12807860
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001328s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001111s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004723s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006112s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0040s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"192.168.137.104\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}       ','1447660056') [ RunTime:0.0314s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0039s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116154736','1447660056','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwx1923482F3E1CC8932B27528C49878167') [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: key E:\Wnmp\noobird\Application\Dev\Controller\CtcclttxController.class.php 第 43 行.
+SQL: INSERT INTO `logs` (`created`,`title`,`content`) VALUES ('1447660056','test','{\"resultCode\":\"2002\"}') [ RunTime:0.0130s ]
+
+[ 2015-11-16T16:28:27+08:00 ] 192.168.1.55 /Dev/Api/applyOrderRoute
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000144s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002916s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001457s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003745s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005575s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0053s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"10.141.4.61\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}           ','1447662507') [ RunTime:0.0519s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0077s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116162827','1447662507','5','010141004061','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwx61AA0A8F8C6BE59335C5AC5C9E7D08A1') [ RunTime:0.0115s ]
+SQL: INSERT INTO `logs` (`created`,`title`,`content`) VALUES ('1447662507','test','{\"resultCode\":\"3001\"}') [ RunTime:0.0269s ]
+
+[ 2015-11-16T16:29:32+08:00 ] 192.168.1.55 /Dev/Api/applyOrderRoute
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000619s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000790s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003470s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0049s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"192.168.137.104\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}       ','1447662572') [ RunTime:0.0333s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0040s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116162932','1447662572','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwx5F69550FE54B742E445A9F815D3E7687') [ RunTime:0.0200s ]
+SQL: INSERT INTO `logs` (`created`,`title`,`content`) VALUES ('1447662572','test','{\"resultCode\":\"3001\"}') [ RunTime:0.0482s ]
+
+[ 2015-11-16T16:36:47+08:00 ] 192.168.1.55 /Dev/Api/applyOrderRoute
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000754s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001035s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004532s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0052s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"192.168.137.104\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}       ','1447663007') [ RunTime:0.0567s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0078s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116163647','1447663007','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwxC093926A3AE87D6E0D20702537B6EBAC') [ RunTime:0.0181s ]
+SQL: INSERT INTO `logs` (`created`,`title`,`content`) VALUES ('1447663007','test','{\"resultCode\":\"3001\"}') [ RunTime:0.0296s ]
+
+[ 2015-11-16T16:36:59+08:00 ] 192.168.1.55 /Dev/Api/applyOrderRoute
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000698s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000775s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003422s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0045s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"192.168.137.104\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}       ','1447663018') [ RunTime:0.0602s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0109s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0116s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116163658','1447663018','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwxC4A9DFA2B0CA8A3F8209F0B0974E6BB3') [ RunTime:0.0124s ]
+SQL: INSERT INTO `logs` (`created`,`title`,`content`) VALUES ('1447663018','test','{\"resultCode\":\"3001\"}') [ RunTime:0.0393s ]
+
+[ 2015-11-16T16:38:46+08:00 ] 192.168.1.55 /Dev/Api/applyOrderRoute
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001010s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000998s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002896s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004268s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0043s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"192.168.137.104\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}       ','1447663125') [ RunTime:0.0280s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0043s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116163845','1447663125','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwxAEF17FA93E97065DED0E998BA6746A32') [ RunTime:0.0169s ]
+SQL: INSERT INTO `logs` (`created`,`title`,`content`) VALUES ('1447663125','test','{\"resultCode\":\"3001\"}') [ RunTime:0.0426s ]
+
+[ 2015-11-16T16:38:54+08:00 ] 192.168.1.55 /Dev/Api/applyOrderRoute
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000988s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001457s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007679s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0066s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('apply_pay','{\"app_id\":\"16\",\"app_key\":\"44e1e47caa2e5e40\",\"iap_key\":\"00100016T00002\",\"mnc\":\"46001\",\"ip\":\"192.168.137.104\",\"macaddress\":\"e4907eaff0d7\",\"appversion\":1,\"imsi\":\"460018172638740\",\"imei\":\"89860112881011714846\",\"appversionname\":\"1.0\",\"apppackagename\":\"com.example.demo\"}       ','1447663134') [ RunTime:0.0466s ]
+SQL: SHOW COLUMNS FROM `iaps` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `iaps` WHERE `status` = 1 AND `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `applications` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `applications` WHERE `status` = 3 AND `id` = 16 AND `app_key` = '44e1e47caa2e5e40' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `fees` [ RunTime:0.0116s ]
+SQL: SELECT * FROM `fees` WHERE `status` = 1 AND `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mncs` [ RunTime:0.0048s ]
+SQL: SELECT `operator` FROM `mncs` WHERE `mnc` = '46001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_code` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' AND `operator` = 'CELCOM' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `iaps` WHERE `iap_key` = '00100016T00002' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_code` WHERE `pay_code` = 'T00' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: iap_id E:\Wnmp\noobird\Application\Dev\Controller\ApicomController.class.php 第 41 行.
+SQL: INSERT INTO `statistics` (`user_id`,`iap_id`,`application_id`,`mobile`,`telco`,`operator`,`pay_code`,`service_code`,`fee`,`local_fee`,`local_unit`,`local_time`,`created`,`status`,`ip`,`macaddress`,`appversion`,`imei`,`imsi`,`appversionname`,`apppackagename`,`order_key`) VALUES ('5',NULL,'16','','0','46001','T00','test','0','0','RM','20151116163854','1447663134','5','192168137104','e4907eaff0d7','1','89860112881011714846','460018172638740','1.0','com.example.demo','jfwx6F4162D27328197FF110B9A49CF8A4D2') [ RunTime:0.0166s ]
+SQL: INSERT INTO `logs` (`created`,`title`,`content`) VALUES ('1447663134','test','{\"resultCode\":\"3001\"}') [ RunTime:0.0400s ]
+
+[ 2015-11-16T17:17:33+08:00 ] 127.0.0.1 /Dev/Api/getOrderResult
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000571s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000824s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002877s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004003s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0057s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('TEST','{\"order_key\":\"jfwx6F4162D27328197FF110B9A49CF8A4D2\"}            ','1447665453') [ RunTime:0.1468s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `statistics` WHERE `order_key` = 'jfwx6F4162D27328197FF110B9A49CF8A4D2' LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2015-11-16T17:26:51+08:00 ] 192.168.1.55 /Dev/Api/getOrderResult
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000538s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000753s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002335s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003264s ]
+NOTIC: [8] Undefined index: get_order_result E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 124 行.
+NOTIC: [2] mdecrypt_generic(): An empty string was passed E:\Wnmp\noobird\Application\Common\Api\Lib\Aviup.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0037s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('TEST','','1447666011') [ RunTime:0.0811s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `statistics` WHERE `order_key` = null LIMIT 1   [ RunTime:0.0022s ]
+
+[ 2015-11-16T17:27:06+08:00 ] 192.168.1.55 /Dev/Api/getOrderResult
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000105s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001710s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001822s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.006130s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008440s ]
+NOTIC: [8] Undefined index: get_order_result E:\Wnmp\noobird\Application\Dev\Controller\ApiController.class.php 第 124 行.
+NOTIC: [2] mdecrypt_generic(): An empty string was passed E:\Wnmp\noobird\Application\Common\Api\Lib\Aviup.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0086s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('TEST','','1447666026') [ RunTime:0.0576s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `statistics` WHERE `order_key` = null LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-11-16T17:44:21+08:00 ] 192.168.1.55 /Dev/Api/getOrderResult
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001056s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001091s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004693s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006171s ]
+SQL: SHOW COLUMNS FROM `logs` [ RunTime:0.0039s ]
+SQL: INSERT INTO `logs` (`title`,`content`,`created`) VALUES ('TEST','{\"order_key\":\"jfwx6F4162D27328197FF110B9A49CF8A4D2\"}            ','1447667061') [ RunTime:0.0528s ]
+SQL: SHOW COLUMNS FROM `statistics` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `statistics` WHERE `order_key` = 'jfwx6F4162D27328197FF110B9A49CF8A4D2' LIMIT 1   [ RunTime:0.0003s ]
+
