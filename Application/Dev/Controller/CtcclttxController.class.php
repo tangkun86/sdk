@@ -14,17 +14,22 @@ use Api\Lib\MNC;
 
 class CtcclttxController extends ApicomController
 {
+
+    /**
+     * @param $params
+     * @return bool
+     */
     public function applyOrder($params)
     {
         $mnc = new MNC();
         //生成订单
         $order_info = $this->generateOrder($params);
-        $params['extra'] = $order_info['id'];
-        $params['order_key'] = $order_info['order_key'];
+        $params['order_id'] = $order_info['order_id'];
+//        $params['order_key'] = $order_info['order_key'];
         $params['behavior_status'] = $mnc->behavior_status['ctcc_langtian'];
 
         if(isset($params['test'])){
-            $req['extra'] = $order_info['id'];
+            $req['extra'] = $order_info['order_id'];
             $req['fee'] = $order_info['fee'];
             $req['mobile'] = $order_info['mobile'];
             $req['status'] = '00';
@@ -36,15 +41,20 @@ class CtcclttxController extends ApicomController
             //消息加密
             $msg = Aviup::encrypt(json_encode($msg));
             $msg['timestamp'] = $_SERVER['REQUEST_TIME'];
-            $str = $msg['app_id'].$msg['iap_id'].$msg['fee'].$msg['order_key'].$msg['behavior_status'].$msg['timestamp'];
+            $str = $msg['app_id'].$msg['iap_id'].$msg['fee'].$msg['order_id'].$msg['behavior_status'].$msg['timestamp'];
             $msg['sign'] = md5($str);
             $this->ajaxReturn(array('status'=>0,'msg'=>$msg));
         }
         //获取指令端口
         $this->getCommand($params);
-        return;
+        return true;
     }
 
+
+    /**
+     * @param $params
+     * @return bool
+     */
     public function getCommand($params)
     {
         $mnc = new MNC();
@@ -52,12 +62,13 @@ class CtcclttxController extends ApicomController
         $post = array(
             'channelId'=>$params['channelId'],//平台分配
             'fee' => $params['fee'],
-            'ip' => get_server_ip(),
+            'ip' => $params['ip'],
             'extra' => $params['extra'],
             'imsi' => $params['imsi'], //手机imsi码
             'gameName' => $params['app_name'],
             'chargeName' => $params['iap_name'],
         );
+
         $interface_url = 'http://121.41.58.237:8981/center/getCommand.sys';
         $mac = $post['channelId'].$post['fee'].$post['ip'].$post['extra'].urlencode($post['gameName']).urlencode($post['chargeName']).$mnc->ctcc_config['key'];
         $post['mac'] = strtoupper(md5($mac));
@@ -65,7 +76,7 @@ class CtcclttxController extends ApicomController
         $code_arr = json_decode($code,true);
         $msg = $code_arr + $params;
         $msg['timestamp'] = $_SERVER['REQUEST_TIME'];
-        $msg['sign'] = md5($msg['app_id'].$msg['iap_id'].$msg['fee'].$msg['order_key'].$msg['behavior_status'].$msg['timestamp']);
+        $msg['sign'] = md5($msg['app_id'].$msg['iap_id'].$msg['fee'].$msg['order_id'].$msg['behavior_status'].$msg['timestamp']);
 
         //写日志
         M('Logs')->add(array(
@@ -76,13 +87,22 @@ class CtcclttxController extends ApicomController
 
         //消息加密
         $msg = Aviup::encrypt(json_encode($msg));
-        $this->ajaxReturn(array('status'=>0,'msg'=>$msg));
-        if($code->resultCode=='0000'){
-            $this->ajaxReturn(array('status'=>0,'msg'=>$msg));
+//        $this->ajaxReturn(array('status'=>0,'msg'=>$msg));
+        $code_arr = json_decode($code,true);
+//        var_dump($code_arr['resultCode']);exit;
+        $resultCode = $code_arr['resultCode'];
+        if($resultCode=='0000'){
+            $this->ajaxReturn(array('status'=>0,'msg'=>$msg),'JSON',JSON_UNESCAPED_UNICODE);
         }else{
-            $this->ajaxReturn(array('status'=>1,'msg'=>$mnc->ctcc_error[$code->resultCode]));
+            //失败原因加入订单
+            $error_text = Aviup::encrypt(json_encode(array(
+                'errordescription'=>$mnc->ctcc_error[$resultCode],
+                'order_id'=>$params['order_id']
+            ),JSON_UNESCAPED_UNICODE));
+            M('Statistics')->where(array('id'=>$params['order_id']))->setField(array('fail_reasion'=>$error_text));
+            $this->ajaxReturn(array('status'=>1,'msg'=>$error_text),'JSON',JSON_UNESCAPED_UNICODE);
         }
-
+        return true;
     }
 
     //第三方状态通知接口请求地址
@@ -106,25 +126,30 @@ class CtcclttxController extends ApicomController
         $mnc = new MNC();
         $token = md5($req['mobile'].$req['linkId'].$req['longCode'].$req['msg'].$req['status'].$req['fee'].$mnc->ctcc_config['key']);
         if($req['mac']!==strtoupper($token)){
+
+            $msg = aviup::encrypt(json_encode(array(
+                'errordescription'=>'参数校验错误',
+                'order_id'=>$req['extra']
+            ),JSON_UNESCAPED_UNICODE));
+
             $this->ajaxReturn(array(
                 'status'=>1,
-                'msg'=>'该通知是虚假信息！'
-            ));
-        }else{
-            $logs = array(
-                'title'=>'朗天通讯返回状态:'.$mnc->ctcc_return_status[$req['status']],
-                'created'=>TIME,
-                'content'=>json_encode($req),
-            );
-            M('Logs')->add($logs);
+                'msg'=>$msg
+            ),'JSON',JSON_UNESCAPED_UNICODE);
 
-            //写逻辑 更新计费信息
+        }else{
+            //更新计费信息
             $this->updateOrder($req);
 
-            exit('success');
         }
+        return true;
     }
 
+
+    /**
+     * @param $req
+     * @return bool
+     */
     public function updateOrder($req)
     {
         switch($req['status']){
@@ -141,13 +166,8 @@ class CtcclttxController extends ApicomController
             'status'=>$status,
         );
         $model = M('Statistics');
-        $res = $model->where(array('id'=>$req['extra']))->setField($data);
-        if($res===false){
-            M('Logs')->add(array(
-                'created'=>TIME,
-                'title'=>'updateStat_error',
-                'content'=>$model->getError().' '.$model->getLastSql(),
-            ));
-        }
+        $model->where(array('id'=>$req['extra']))->setField($data);
+        echo ('success');
+        return true;
     }
 }
