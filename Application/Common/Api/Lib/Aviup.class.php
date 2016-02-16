@@ -20,14 +20,14 @@ class Aviup
 
     public static $dialog_msg = '
         {
-            "prepare_title":"Prepare",
-            "prepare_msg":"check order information from server,please wait.",
-            "confirm_title":"Confirm",
-            "confirm_msg":"您将花费%FEE%元，购买%APP_NAME%中的%IAP_NAME%物品。本次交易订单号为%ORDER_ID%。",
-            "progress_title":"Progress",
-            "progress_msg":"charging, please wait.",
-            "error_title":"Error",
-            "error_msg":"some issue has been detected, please contact 02812345678."
+            "prepare_title":"准备中",
+            "prepare_msg":"正在准备支付环境，请稍等…",
+            "confirm_title":"确认",
+            "confirm_msg":"您是否希望花费%FEE%元购买由%APP_NAME%应用提供的%IAP_NAME%物品？",
+            "progress_title":"支付中",
+            "progress_msg":"请稍等，视手机网络与运营商网络情况该过程可能需要花费10秒到70秒不等。",
+            "error_title":"注意",
+            "error_msg":"支付过程中发生了问题 %ERRORDESCRIPTION%，订单编号为:%ORDER_ID%。\n 计费超时可在收到运营商计费成功短信后，重新启动APP来获得购买的物品。 \n 计费相关的其他问题可联系客服邮箱xuw@aviup.com"
         }';
 
     /**
