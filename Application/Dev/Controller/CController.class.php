@@ -104,7 +104,7 @@ class CController extends Controller
             );
         }
 
-        if($_REQUEST['status']){
+        if(isset($_REQUEST['status'])){
             $status = $_REQUEST['status'];
             $status += 0;
             $map = array(
@@ -192,7 +192,7 @@ class CController extends Controller
             $p->setConfig('next','<span class="pagenext"></span>');
 
 //            $currentPage = $_REQUEST['pageNum'] ? $_REQUEST['pageNum'] : 1;
-            $currentPage = $_REQUEST['p'] ? $_REQUEST['p'] : 1;
+            $currentPage = isset($_REQUEST['p']) ? $_REQUEST['p'] : 1;
             $p->firstRow = ($currentPage-1)*$listRows;
             //分页查询数据
             $voList = $model

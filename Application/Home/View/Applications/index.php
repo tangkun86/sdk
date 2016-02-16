@@ -54,13 +54,13 @@
                                         <td><?php echo $dev['status_transfer'];   ?></td>
                                         <td>
                                             <?php if($dev['status'] == 1) {?>
-                                                <a href="<?php echo __MODULE__.'/Applications/opration/value/1/id/'.$dev['id']; ?>" class="adminRecommend">审核通过</a>
-                                                <a href="<?php echo __MODULE__.'/Applications/denyApp/id/'.$dev['id']; ?>" class="adminRecommend">审核拒绝</a>
+                                                <a href="<?php echo __MODULE__.'/Applications/opration/value/3/id/'.$dev['id']; ?>" class="adminRecommend">审核通过</a>
+                                                <a href="<?php echo __MODULE__.'/Applications/opration/value/6/id/'.$dev['id']; ?>" class="adminRecommend">审核拒绝</a>
                                             <?php } ?>
                                             <?php if($dev['status'] == 2) {?>
 
-                                                <a href="<?php echo __MODULE__.'/Applications/approveTest/id/'.$dev['id']; ?>" class="adminRecommend">测试通过</a>
-                                                <a href="<?php echo __MODULE__.'/Applications/denyTest/id/'.$dev['id']; ?>" class="adminRecommend">测试拒绝</a>
+                                                <a href="<?php echo __MODULE__.'/Applications/opration/value/7/id/'.$dev['id']; ?>" class="adminRecommend">测试通过</a>
+                                                <a href="<?php echo __MODULE__.'/Applications/opration/value/8/id/'.$dev['id']; ?>" class="adminRecommend">测试拒绝</a>
                                             <?php } ?>
                                             <a href="<?php echo __MODULE__.'/Applications/viewApp/id/'.$dev['id']; ?>" class="adminRecommend">详细</a>
                                             <a href="<?php echo __MODULE__.'/Statistics/statDetail/appId/'.$dev['id']; ?>" class="adminRecommend">订购明细</a>

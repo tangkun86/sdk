@@ -48,7 +48,7 @@
                 <?php } ?>
                 </tbody>
             </table>
-            <?php if($page){ ?>
+            <?php if(isset($page)){ ?>
                 <div style="border: 1px solid #ccc; border-top: none; padding:10px;">
                     <?php echo $page ?>
                 </div>

@@ -28,15 +28,15 @@
                             </p>
                             <p class="formItem">
                                 <label for="version">Service Code</label>
-                                <input type="text"  name="service_code" class="formInput">
+                                <input type="text" value="0000"  name="service_code" class="formInput">
                             </p>
                             <p class="formItem">
                                 <label for="version">Code</label>
-                                <input type="text"  name="code" class="formInput">
+                                <input type="text" value="0000" name="code" class="formInput">
                             </p>
                             <p class="formItem">
                                 <label for="version">Target Number</label>
-                                <input type="text"  name="target" class="formInput">
+                                <input type="text" value="0000" name="target" class="formInput">
                             </p>
                             <p class="formItem">
                                 <label for="version">Operator</label>
@@ -54,7 +54,7 @@
                                 <label for="version">Local</label>
                                 <select name="local">
                                     <option value="en">EN</option>
-                                    <option value="cn">CN</option>
+                                    <option selected="selected" value="cn">CN</option>
                                     <option value="my">MY</option>
                                     <option value="vn">VN</option>
                                 </select>
@@ -65,11 +65,11 @@
                             </p>
                             <p class="formItem">
                                 <label for="version">Local Unit</label>
-                                <input type="text"  name="local_unit" class="formInput">
+                                <input type="text" value="RMB"  name="local_unit" class="formInput">
                             </p>
                             <p class="formItem">
                                 <label for="version">Version</label>
-                                <input type="text"  name="version" class="formInput">
+                                <input type="text" value="2" name="version" class="formInput">
                             </p>
                             <p class="submitDiv">
                                 <input name="" type="submit" value="确定" class="blueBtn">

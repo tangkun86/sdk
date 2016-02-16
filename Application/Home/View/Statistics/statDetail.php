@@ -20,7 +20,7 @@
                                         <select name="user_id" id="userId">
                                             <option value="">ALL</option>
                                             <?php foreach($developers as $el){ ?>
-                                                <option <?php showSelected($_REQUEST['userId'],$el['user_id']); ?> value="<?php echo $el['user_id'] ?>" ><?php echo $el['username'] ?><?php if($el['company_name']){echo '['.$el['company_name'].']';} ?></option>
+                                                <option <?php showSelected($_REQUEST['user_id'],$el['user_id']); ?> value="<?php echo $el['user_id'] ?>" ><?php echo $el['username'] ?><?php if($el['company_name']){echo '['.$el['company_name'].']';} ?></option>
                                             <?php } ?>
                                         </select>
                                         <span>应用名称:</span>
@@ -32,9 +32,9 @@
                                                 <?php } } ?>
                                         </select>
                                         <span> 开始时间:</span>
-                                        <input name="start" value="<?php echo $_REQUEST['start']; ?>"  class="select-datebox easyui-datebox">
+                                        <input name="start" value="<?php if(isset($_REQUEST['start'])) echo date('Y-m-d',$_REQUEST['start']); ?>"  class="select-datebox easyui-datebox">
                                         <span>结束时间:</span>
-                                        <input name="end" value="<?php echo $_REQUEST['end']; ?>"  class="select-datebox easyui-datebox">
+                                        <input name="end" value="<?php if(isset($_REQUEST['end'])) echo date('Y-m-d',$_REQUEST['end']); ?>"  class="select-datebox easyui-datebox">
                                         <input type="submit" class="grayBtn">
                                     </form>
                                 </div>
@@ -45,6 +45,7 @@
                             <table class="contentTable">
                                 <thead>
                                 <tr>
+                                    <th>订单编号</th>
                                     <th>手机</th>
                                     <th>运营商</th>
                                     <th>消费</th>
@@ -56,14 +57,15 @@
                                     <th>公司名</th>
                                     <th>发生时间</th>
                                     <th>状态</th>
-                                    <th>客户端回执</th>
+                                    <!--<th>客户端回执</th>-->
 
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php foreach($list as $el){ ?>
                                     <tr>
-                                        <td><?php echo $el['mobile'] ?></td>
+                                        <td><?php echo $el['id']; ?></td>
+                                        <td><?php echo ($el['mobile']?$el['mobile']:'-'); ?></td>
                                         <td><?php echo $el['operator'] ?></td>
                                         <td><?php echo $el['fee'] ?></td>
                                         <td><?php echo $el['name'] ?></td>
@@ -71,10 +73,10 @@
                                         <td><?php echo $el['iap_name'] ?></td>
                                         <td><?php echo $el['iap_key'] ?></td>
                                         <td><?php echo $el['username'] ?></td>
-                                        <td><?php echo $el['company_name'] ?></td>
+                                        <td><?php echo ($el['company_name']?$el['company_name']:'-'); ?></td>
                                         <td><?php echo date('Y-m-d H:i', $el['created']); ?></td>
-                                        <td><?php echo $el['status'] ?></td>
-                                        <td><?php echo $el['client_status'] ?></td>
+                                        <td><?php echo $el['status_transfer'] ?></td>
+                                        <!--<td><?php /*echo $el['client_status'] */?></td>-->
                                     </tr>
                                 <?php } ?>
                                 </tbody>

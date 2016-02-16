@@ -89,6 +89,7 @@ class ApiController extends Controller
      */
     public function validateReq()
     {
+//         $_REQUEST['apply_pay'] = Aviup::encrypt('{"app_id":"40","app_key":"c5f3aa56e8be690a2b33491d610e2bed","iap_id":"b411c5954dd1d2dd","mnc":"46001","ip":"192.168.137.104","macaddress":"e4907eaff0d7","appversion":1,"imsi":"460018172638740","imei":"89860112881011714846","appversionname":"1.0","apppackagename":"com.example.demo","timestamp":"1234567890","sign":"66d3fc70a89b102d040e7ac45caf917b","gameaccount":"游戏aaa账号@$%#"}');
 //         $_REQUEST['apply_pay'] = Aviup::encrypt('{"app_id":"16","app_key":"44e1e47caa2e5e40","iap_id":"00100016T00002","mnc":"46001","ip":"192.168.137.104","macaddress":"e4907eaff0d7","appversion":1,"imsi":"460018172638740","imei":"89860112881011714846","appversionname":"1.0","apppackagename":"com.example.demo","timestamp":"1234567890","sign":"23d9de85f47b69d647dbae33f3242972","gameaccount":"游戏aaa账号@$%#"}');
         //$_REQUEST['get_order_result'] = Aviup::encrypt('{"app_id":"16","app_key":"44e1e47caa2e5e40","iap_key":"00100016T00002","timestamp":"1234567890","sign":"4c6eab6028de8fde534392b879352f3a","order_id":"1"}');
         //$_REQUEST['upload_app_info'] = Aviup::encrypt('{"app_id":"16","app_key":"44e1e47caa2e5e40","mnc":"46001","ip":"192.168.137.221","macaddress":"e4:90:7e:af:f0:d7","imsi":"460018172638740","imei":"89860112881011714846","appversion":1,"appversionname":"1.0","apppackagename":"com.example.demo","recordid":"","timestamp":"1451382760","sign":"06429e145b7e89ec6cb73c50f9db251e"}');

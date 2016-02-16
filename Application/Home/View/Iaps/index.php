@@ -67,13 +67,13 @@
                                         <td><?php echo $iap['status_transfer'];?></td>
                                         <td>
                                             <?php if($iap['status'] == 3) {?>
-                                                <a href="" class="adminRecommend">审核通过</a>
-                                                <a href="#approval" class="adminRecommend adminDeny" iapId="<?php echo $iap['id']; ?>">审核拒绝</a>
+                                                <a href="<?php echo __MODULE__.'/Iaps/opration/value/1/id/'.$iap['id']; ?>" class="adminRecommend">审核通过</a>
+                                                <a href="<?php echo __MODULE__.'/Iaps/opration/value/5/id/'.$iap['id']; ?>" class="adminRecommend adminDeny" iapId="<?php echo $iap['id']; ?>">审核拒绝</a>
                                             <?php } ?>
                                             <?php if($iap['status'] == 1) {?>
-                                                <a href="#approval2" class="adminRecommend adminOffline" iapId="<?php echo $iap['id']; ?>">下线</a>
+                                                <a href="<?php echo __MODULE__.'/Iaps/opration/value/3/id/'.$iap['id']; ?>" class="adminRecommend adminOffline" iapId="<?php echo $iap['id']; ?>">下线</a>
                                             <?php } ?>
-                                            <a href="<?php echo U('Dev/Applications/viewIap',array('id'=>$iap['id'])); ?>" class="adminRecommend">详细</a>
+                                            <a href="<?php echo U('Dev/Iaps/viewIap',array('id'=>$iap['id'])); ?>" class="adminRecommend">详细</a>
                                         </td>
                                     </tr>
                                 <?php } ?>

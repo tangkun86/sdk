@@ -32,7 +32,7 @@ class ComController extends Controller
     public function getApps()
     {
         $map = array('user_id'=>$_SESSION['user_id']);
-        if($_REQUEST['app_id']){
+        if(isset($_REQUEST['app_id'])){
             $map += array('id'=>$_REQUEST['app_id']);
         }
         $apps = M('Applications')->field('id,name,user_id,app_id,app_key,desc')->where($map)->select();

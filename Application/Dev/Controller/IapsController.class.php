@@ -36,7 +36,7 @@ class IapsController extends CController
             $p->setConfig('prev','<span class="pageprev"></span>');
             $p->setConfig('next','<span class="pagenext"></span>');
 //            $currentPage = $_REQUEST['pageNum'] ? $_REQUEST['pageNum'] : 1;
-            $currentPage = $_REQUEST['p'] ? $_REQUEST['p'] : 1;
+            $currentPage = isset($_REQUEST['p']) ? $_REQUEST['p'] : 1;
             $p->firstRow = ($currentPage-1)*$listRows;
             //分页查询数据
             $voList = $model

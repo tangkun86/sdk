@@ -88,7 +88,7 @@ class StatisticsController extends CController
             $currentPage = $_REQUEST['p'] ? $_REQUEST['p'] : 1;
             $p->firstRow = ($currentPage-1)*$listRows;
             //分页查询数据
-            $field = array('S.mobile','S.application_id','S.created','S.fee','S.status','S.client_status','S.operator','A.name',
+            $field = array('S.id','S.mobile','S.application_id','S.created','S.fee','S.status','S.client_status','S.operator','A.name',
                 'D.company_name','u.username','A.app_id','S.user_id','I.name as iap_name','I.iap_key');
             $voList = $model
                 ->alias('S')
@@ -98,7 +98,6 @@ class StatisticsController extends CController
                 ->order('`created` desc')
                 ->limit($p->firstRow . ',' . $p->listRows)
                 ->select ( );
-
             //模板赋值显示
             R('Com/getDevelopers');
             R('Com/getApps');
@@ -159,6 +158,12 @@ class StatisticsController extends CController
             $this->display();
         }
         return;
+    }
+
+    public function queryApp()
+    {
+        $callback_data = D('Applications')->field('id,name')->where(array('user_id'=>$_REQUEST['userId']))->select();
+        $this->ajaxReturn(array('apps'=>$callback_data));
     }
 
     public function statApp()

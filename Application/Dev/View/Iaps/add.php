@@ -41,7 +41,7 @@
                         <td class="regtabmid">
                             <select name="pay_code" class="stanselect">
                                 <?php foreach($fees as $fee){ ?>
-                                    <option value="<?php echo $fee['pay_code'] ?>"> <?php echo $fee['description'] ?> </option>
+                                    <option value="<?php echo $fee['pay_code'] ?>"> <?php echo $fee['pay_code'].'-'.$fee['description'] ?> </option>
                                 <?php } ?>
                             </select>
                             <span class="rcolor">创建后不能修改</span>

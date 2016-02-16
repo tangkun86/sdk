@@ -28,6 +28,7 @@
                                     <th>资费描述</th>
                                     <th>状态</th>
                                     <th>创建时间</th>
+                                    <th>修改时间</th>
                                     <th>操作</th>
                                 </thead>
                                 <tbody>
@@ -37,6 +38,7 @@
                                         <td><?php echo $fee['description'] ?></td>
                                         <td><?php echo $fee['status']==1 ? '上线' : '下线' ?></td>
                                         <td><?php echo date('Y-m-d H:i',$fee['created']); ?></td>
+                                        <td><?php echo (!$fee['updated'] ? '--' : date('Y-m-d H:i',$fee['updated'])); ?></td>
                                         <td>
                                             <?php if($fee['status']!= 1){ ?>
                                                 <a href="<?php echo __MODULE__.'/Fees/opration/value/1/id/'.$fee['id']; ?>" class="adminRecommend">发布</a>
