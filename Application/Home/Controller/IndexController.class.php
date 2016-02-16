@@ -17,12 +17,13 @@ class IndexController extends Controller{
     {
         vendor('Hprose.HproseHttpClient');
         $client = new \HproseHttpClient('http://127.0.0.1:81/Home/Server');
+//        $client = new \HproseHttpClient('http://127.0.0.1/lua/index');
 //        var_dump($client);
         // 或者采用
 //        $client = new \HproseHttpClient();
 //        var_dump($client);
 //        $client->useService('http://127.0.0.1/index.php/Home/Server');
-        $result = $client->test();
-        var_dump($result);
+//        $result = $client->test();
+        var_dump($client->test());
     }
 }

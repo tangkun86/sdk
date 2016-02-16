@@ -25,26 +25,7 @@ class CtcclttxController extends ApicomController
         //生成订单
         $order_info = $this->generateOrder($params);
         $params['order_id'] = $order_info['order_id'];
-//        $params['order_key'] = $order_info['order_key'];
         $params['behavior_status'] = $mnc->behavior_status['ctcc_langtian'];
-
-        if(isset($params['test'])){
-            $req['extra'] = $order_info['order_id'];
-            $req['fee'] = $order_info['fee'];
-            $req['mobile'] = $order_info['mobile'];
-            $req['status'] = '00';
-            $this->updateOrder($req);
-            $order_info['longCode']='106598721';
-            $order_info['resultCode']='0000';
-            $order_info['code']='01#1185api#05kpP4000';
-            $msg = $order_info+$params;
-            //消息加密
-            $msg = Aviup::encrypt(json_encode($msg));
-            $msg['timestamp'] = $_SERVER['REQUEST_TIME'];
-            $str = $msg['app_id'].$msg['iap_id'].$msg['fee'].$msg['order_id'].$msg['behavior_status'].$msg['timestamp'];
-            $msg['sign'] = md5($str);
-            $this->ajaxReturn(array('status'=>0,'msg'=>$msg));
-        }
         //获取指令端口
         $this->getCommand($params);
         return true;
@@ -63,7 +44,7 @@ class CtcclttxController extends ApicomController
             'channelId'=>$params['channelId'],//平台分配
             'fee' => $params['fee'],
             'ip' => $params['ip'],
-            'extra' => $params['extra'],
+            'extra' => $params['order_id'],
             'imsi' => $params['imsi'], //手机imsi码
             'gameName' => $params['app_name'],
             'chargeName' => $params['iap_name'],
@@ -79,17 +60,15 @@ class CtcclttxController extends ApicomController
         $msg['sign'] = md5($msg['app_id'].$msg['iap_id'].$msg['fee'].$msg['order_id'].$msg['behavior_status'].$msg['timestamp']);
 
         //写日志
-        M('Logs')->add(array(
+        /*M('Logs')->add(array(
             'created'=>TIME,
             'title'=>'getCommand',
             'content'=>$code,
-        ));
+        ));*/
 
         //消息加密
         $msg = Aviup::encrypt(json_encode($msg));
-//        $this->ajaxReturn(array('status'=>0,'msg'=>$msg));
         $code_arr = json_decode($code,true);
-//        var_dump($code_arr['resultCode']);exit;
         $resultCode = $code_arr['resultCode'];
         if($resultCode=='0000'){
             $this->ajaxReturn(array('status'=>0,'msg'=>$msg),'JSON',JSON_UNESCAPED_UNICODE);

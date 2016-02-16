@@ -5,7 +5,7 @@
         <h1><?php echo L('site_name');?></h1>
         <form method="post" action="<?php echo U('Users/loginDev'); ?>">
             <div class="loginfo rcolor">
-                <?php  echo $error;?>
+                <?php  if(isset($error)) echo $error;?>
             </div>
             <div class="loginfo">
                 <input type="text"  class="staninput" id="username" name="username" value="用户名" style="width: 400px;" onfocus="javascript:if('用户名'==this.value)this.value='';" onblur="javascript:if(''==this.value)this.value='用户名'" >
@@ -26,6 +26,6 @@
 </div><!-- For div:wrap-inne -->
 </div><!-- For div:wrap -->
 
-<?php include T('views', 'Layout/footer'); ?>
+<?php include T('Layout/footer'); ?>
 </body>
 </html>

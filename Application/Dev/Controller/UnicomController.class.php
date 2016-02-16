@@ -30,20 +30,8 @@ class UnicomController extends ApicomController
             $status=1;
             $msg = array('errordescription'=>'订单生成失败','order_id'=>0);
         }else{
-            $order_id = str_pad($order_info['order_id'],36,0,STR_PAD_LEFT);
-            if(isset($params['test'])){
-                $test_xml = '<?xml version="1.0" encoding="UTF-8"?>';
-                $test_xml .= '<callbackReq>';
-                $test_xml .= '<orderid>'.$order_id.'</orderid>';
-                $test_xml .= '<payfee>'.($order_info['fee']*100).'</payfee>';
-                $test_xml .= '<payType>2</payType>';
-                $test_xml .= '<hRet>0</hRet>';
-                $test_xml .= '<status>00000</status>';
-                $test_xml .= '</callbackReq>';
-                $xml_obj = simplexml_load_string($test_xml);
-                $this->updateOrder($xml_obj);
-            }
-
+            $order_id = str_pad($order_info['order_id'],35,0,STR_PAD_LEFT);
+            $order_id = 'A'.$order_id;
             $mnc = new MNC();
             $msg = array(
                 'appid'     => $mnc->cucc_config['appid'],//合作渠道申报的虚拟作品的appid
@@ -54,16 +42,19 @@ class UnicomController extends ApicomController
                 'vaccode'   => $mnc->cucc_config['vaccode'][$order_info['fee']],//VAC计费代码(12位计费代码）
                 'props'     => $order_info['iap_name'],//实际购买物品名称 （不是虚拟作品）用来显示在计费提示对话框中。
                 'money'     => $order_info['fee'],//道具金额（元），用来显示在计费提示对话框中。
-                'orderid'   => $order_id,//合作渠道产生的订单号（联网）或者唯一编号（单机），必须为36位字母、数字或两种组合，不能含其他字符。此号码主要用于透传，合作渠道可以自行定义。
-//                'listener'  => ''//SDK回调结果
+                'order_id'  => $order_id,//合作渠道产生的订单号（联网）或者唯一编号（单机），必须为36位字母、数字或两种组合，不能含其他字符。此号码主要用于透传，合作渠道可以自行定义。
             );
+            $msg['order_id']    = $order_id;
             $msg['iap_id']      = $order_info['iap_id'];
             $msg['fee']         = $order_info['fee'];
             $msg['behavior_status'] = $mnc->behavior_status['cucc_wo_shop'];
         }
 
+        $msg['app_name']  = $params['app_name'];
+        $msg['iap_name']  = $params['iap_name'];
         $msg['timestamp'] = $_SERVER['REQUEST_TIME'];
-        $msg['sign'] = md5($msg['app_id'].$msg['iap_name'].$msg['fee'].$msg['order_id'].$msg['behavior_status'].$msg['timestamp']);
+        $msg['dialog_msg'] = $params['dialog_msg'];
+        $msg['sign'] = md5($msg['app_id'].$msg['iap_id'].$msg['fee'].$msg['order_id'].$msg['behavior_status'].$msg['timestamp']);
 
         //消息加密
         $msg = Aviup::encrypt(json_encode($msg,JSON_UNESCAPED_UNICODE));
@@ -75,20 +66,16 @@ class UnicomController extends ApicomController
     }
 
     //校验订单有效性
-    public function checkOrder()
+    public function validateOrder()
     {
-        $xml = $GLOBALS['HTTP_RAW_POST_DATA'];
-        /*$xml = '<?xml version="1.0" encoding="UTF-8"?>
-                    <checkOrderIdReq>
-                    <orderid>XXX</orderid>
-                    <signMsg>XXX</signMsg>
-                    </checkOrderIdReq>';*/
+        $xml = file_get_contents('php://input');
         $mnc_conf = new MNC();
-        $xml_obj = simplexml_load_string($xml);
+        $xml_obj = simplexml_load_string($xml,'SimpleXMLElement',LIBXML_NOCDATA);
         $secretKey = md5('orderid='.$xml_obj->orderid.'&Key='.$mnc_conf->cucc_config['Key']);
         $statistics_model = M('Statistics');
 
         $order_id = $xml_obj->orderid;
+        $order_id = ltrim($order_id,'A');
         $order_id += 0;
         $order_condition = array('id'=>$order_id);
 
@@ -117,7 +104,7 @@ class UnicomController extends ApicomController
             $xml_return .= '<appdeveloper>'.$developer['company_name'].'</appdeveloper>';
             $xml_return .= '<feename>'.$iap['name'].'</feename>';
             $xml_return .= '<payfee>'.$Statistics['fee'].'</payfee>';
-            $xml_return .= '<serviceid>'.$mnc_conf->cucc_config['vaccode'].'</serviceid>';
+            $xml_return .= '<serviceid>'.$mnc_conf->cucc_config['vaccode'][$Statistics['fee']].'</serviceid>';
             $xml_return .= '<gameaccount>'.$Statistics['gameaccount'].'</gameaccount>';
             $xml_return .= '<appid>'.$application['id'].'</appid>';
             $xml_return .= '<channelid>'.$mnc_conf->cucc_config['channelid'].'</channelid>';
@@ -132,18 +119,27 @@ class UnicomController extends ApicomController
     }
 
     //回调地址用作检验订单和返回处理订单信息
-    public function callBackNotice()
+    public function checkOrder()
     {
-        if($_REQUEST['serviceid']=='validateorderid'){
-            $this->checkOrder();
-            exit;
+        /*M('Logs')->add(array(
+            'title'=>'requestdatas',
+            'content'=>json_encode($_REQUEST),
+            'created'=>TIME
+        ));*/
+
+        if(isset($_REQUEST['serviceid'])){
+            if($_REQUEST['serviceid']=='validateorderid'){
+                $this->validateOrder();
+                exit;
+            }
         }
-        $xml = $GLOBALS['HTTP_RAW_POST_DATA'];
-        $xml_obj = simplexml_load_string($xml);
+
+        $xml = file_get_contents('php://input');
+        $xml_obj = simplexml_load_string($xml,'SimpleXMLElement',LIBXML_NOCDATA);
         $mnc = new MNC();
         $sercretKey = md5('orderid='.$xml_obj->orderid.'&ordertime='.$xml_obj->ordertime.'&cpid='.$xml_obj->cpid.'&appid='.$xml_obj->appid.'&fid='.$xml_obj->fid.'&consumeCode='.$xml_obj->consumeCode.'&payfee='.$xml_obj->payfee.'&payType='.$xml_obj->payType.'&hRet='.$xml_obj->hRet.'&status='.$xml_obj->status.'&Key='.$mnc->cucc_config['Key']);
         $xml_return = '<?xml version="1.0" encoding="UTF-8"?>';
-        if($sercretKey===$xml_obj->signMsg){
+        if(strtolower($sercretKey)===strtolower($xml_obj->signMsg)){
             $xml_return.= '<callbackRsp>1</callbackRsp>';
             $this->updateOrder($xml_obj);
         }else{
@@ -158,6 +154,7 @@ class UnicomController extends ApicomController
     public function updateOrder($xml_obj)
     {
         $order_id = $xml_obj->orderid;
+        $order_id = ltrim($order_id,'A');
         $order_id += 0;
 
         if($xml_obj->hRet==0){//成功
