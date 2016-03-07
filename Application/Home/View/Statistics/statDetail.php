@@ -20,7 +20,8 @@
                                         <select name="user_id" id="userId">
                                             <option value="">ALL</option>
                                             <?php foreach($developers as $el){ ?>
-                                                <option <?php showSelected($_REQUEST['user_id'],$el['user_id']); ?> value="<?php echo $el['user_id'] ?>" ><?php echo $el['username'] ?><?php if($el['company_name']){echo '['.$el['company_name'].']';} ?></option>
+                                                <?php $uid = isset($_REQUEST['user_id']) ? $_REQUEST['user_id'] : $_REQUEST['userId'];?>
+                                                <option <?php showSelected($uid,$el['user_id']); ?> value="<?php echo $el['user_id'] ?>" ><?php echo $el['username'] ?><?php if($el['company_name']){echo '['.$el['company_name'].']';} ?></option>
                                             <?php } ?>
                                         </select>
                                         <span>应用名称:</span>
@@ -31,10 +32,15 @@
                                                     <option <?php showSelected($_REQUEST['appId'],$a['id']); ?> value="<?php echo $a['id'] ;?>"><?php echo $a['name'] ;?></option>
                                                 <?php } } ?>
                                         </select>
+                                        <span>状态:</span>
+                                        <select name="status">
+                                            <option value="1" <?php showSelected($_REQUEST['status'],1);?>>成功</option>
+                                            <option value="all" <?php showSelected($_REQUEST['status'],'all');?>>所有</option>
+                                        </select>
                                         <span> 开始时间:</span>
-                                        <input name="start" value="<?php if(isset($_REQUEST['start'])) echo date('Y-m-d',$_REQUEST['start']); ?>"  class="select-datebox easyui-datebox">
+                                        <input name="start" value="<?php if(isset($_REQUEST['start']) && is_numeric($_REQUEST['start'])) echo date('Y-m-d',$_REQUEST['start']); ?>"  class="select-datebox easyui-datebox">
                                         <span>结束时间:</span>
-                                        <input name="end" value="<?php if(isset($_REQUEST['end'])) echo date('Y-m-d',$_REQUEST['end']); ?>"  class="select-datebox easyui-datebox">
+                                        <input name="end" value="<?php if(isset($_REQUEST['end']) && is_numeric($_REQUEST['end'])) echo date('Y-m-d',$_REQUEST['end']); ?>"  class="select-datebox easyui-datebox">
                                         <input type="submit" class="grayBtn">
                                     </form>
                                 </div>

@@ -25,12 +25,12 @@
                                         </select>
                                         <span>状态:</span>
                                         <select name="status" id="status">
-                                            <option value="" >全部</option>
-                                            <option value="2" >IAP新</option>
-                                            <option value="3" >IAP计费点审核中</option>
-                                            <option value="5" >IAP计费点审核不通过</option>
-                                            <option value="4" >IAP待发布</option>
-                                            <option value="1" >IAP已发布</option>
+                                            <option value="" <?php showSelected($_REQUEST['status'],null);?> >全部</option>
+                                            <option value="2" <?php showSelected($_REQUEST['status'],2);?> >IAP新</option>
+                                            <option value="3" <?php showSelected($_REQUEST['status'],3);?> >IAP计费点审核中</option>
+                                            <option value="5" <?php showSelected($_REQUEST['status'],5);?> >IAP计费点审核不通过</option>
+                                            <option value="4" <?php showSelected($_REQUEST['status'],4);?> >IAP待发布</option>
+                                            <option value="1" <?php showSelected($_REQUEST['status'],1);?> >IAP已发布</option>
                                         </select>
                                         <input type="submit" value="search" class="grayBtn">
                                     </form>
@@ -58,7 +58,8 @@
                                         <!--<td><input name="" type="checkbox" value=""></td>-->
                                         <td><?php echo $iap['name'] ?></td>
                                         <td><?php echo $iap['iap_key'] ?></td>
-                                        <td><?php echo $iap['pay_code'] ?></td>
+                                        <!--<td><?php /*echo $iap['pay_code'] */?></td>-->
+                                        <td><?php echo $iap['fee'] ?></td>
                                         <td><?php echo $iap['app_name'] ?></td>
                                         <td><?php echo $iap['app_id'] ?></td>
                                         <td><?php echo $iap['username'] ?></td>

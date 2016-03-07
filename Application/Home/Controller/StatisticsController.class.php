@@ -12,14 +12,28 @@ namespace Home\Controller;
 class StatisticsController extends CController
 {
 
-    protected function _list($model, $map, $sortBy = '', $asc = false)
+    public function index() {
+        //列表过滤器，生成查询Map对象
+        #$map = $this->_search ();
+        if (method_exists ( $this, '_filter' )) {
+            $map = $this->_filter ('S');
+        }
+        $name  = CONTROLLER_NAME;
+        $model = D ($name);
+        if (! empty ( $model )) {
+            $this->_list ( $model, $map );
+        }
+        $this->display ('index');
+    }
+
+    public function _list($model, $map, $sortBy = '', $asc = false)
     {
 
         $join = '
             LEFT JOIN developers D ON S.user_id=D.user_id
             LEFT JOIN users u ON S.user_id=u.id
         ';
-        $map = array('S.status'=>array('eq',1))+$this->_filter('S');
+        $map = array('S.status'=>array('eq',1))+$map;
         //取得满足条件的记录数
         $count = $model->field('SUM(S.fee)')->alias('S')->join($join)->where ( $map )->group('S.user_id')->count ( 'S.id' );
         #echo $model->getlastSql();exit;
@@ -46,7 +60,7 @@ class StatisticsController extends CController
                 ->join($join)
                 ->where($map)
                 ->group('S.user_id')
-                ->order('`total` desc')
+                ->order('S.created desc')
                 ->limit($p->firstRow . ',' . $p->listRows)
                 ->select ( );
 
@@ -68,7 +82,13 @@ class StatisticsController extends CController
             LEFT JOIN developers D ON S.user_id=D.user_id
             LEFT JOIN iaps I ON S.iap_id=I.id
         ';
-        $map = $this->_filter('S');
+
+
+        if(isset($_REQUEST['status'])){
+            $map = $_REQUEST['status']!='all' ? array('S.status'=>array('eq',$_REQUEST['status']))+$this->_filter('S') : $this->_filter('S');
+        }else{
+            $map = array('S.status'=>array('eq',1))+$this->_filter('S');
+        }
         #var_dump($map);exit;
         //取得满足条件的记录数
         $count = $model->alias('S')->join($join)->where ( $map )->count ( 'S.id' );
@@ -119,9 +139,11 @@ class StatisticsController extends CController
             LEFT JOIN iaps I ON S.iap_id=I.id
         ';
         $map = array('S.status'=>array('eq',1))+$this->_filter('S');
+//        var_dump($map);exit;
         //取得满足条件的记录数
-        $count = $model->alias('S')->join($join)->where ( $map )->group('S.iap_id')->count ( 'S.id' );
-        #echo $count;exit;
+        $total_sid_list = $model->alias('S')->field('S.id')->join($join)->where ( $map )->group('S.iap_id')->select();
+        $count = count($total_sid_list);
+//        echo $model->getLastSql();exit;
         if ($count > 0) {
             //创建分页对象
             if (! empty ( $_REQUEST ['numPerPage'] )) {
@@ -138,25 +160,26 @@ class StatisticsController extends CController
             $currentPage = $_REQUEST['p'] ? $_REQUEST['p'] : 1;
             $p->firstRow = ($currentPage-1)*$listRows;
             //分页查询数据
-            $field = array('SUM(S.fee) as total','S.application_id','A.name','A.app_id','D.company_name','u.username','A.user_id',
-            'I.name as iap_name','I.iap_key');
+            $field = array('SUM(S.fee) as total','S.iap_id','S.application_id','A.name','A.app_id','D.company_name','u.username','A.user_id',
+                'I.name as iap_name','I.iap_key');
             $voList = $model
                 ->alias('S')
                 ->field($field)
                 ->join($join)
                 ->where($map)
                 ->group('S.iap_id')
-                ->order('`total` desc')
+                ->order('S.created desc')
                 ->limit($p->firstRow . ',' . $p->listRows)
                 ->select ( );
-            #var_dump($voList);exit;
+//            var_dump($voList);exit;
             //模板赋值显示
-            R('Com/getDevelopers');
-            R('Com/getApps');
-            $this->assign ( 'list', $voList );
+
+            $this->assign('list', $voList);
             $this->assign('page',$p->show());
-            $this->display();
         }
+        R('Com/getDevelopers');
+        R('Com/getApps');
+        $this->display();
         return;
     }
 
@@ -184,7 +207,8 @@ class StatisticsController extends CController
         }
         #var_dump($map);exit;
         //取得满足条件的记录数
-        $count = $model->alias('S')->join($join)->where ( $map )->group('S.application_id')->count ( 'S.id' );
+        $counts = $model->alias('S')->field('S.id')->join($join)->where ( $map )->group('S.application_id')->select( );
+        $count = count($counts);
         #echo $model->getLastSql();exit;
         R('Com/getDevelopers');
         if ($count > 0) {
@@ -210,7 +234,7 @@ class StatisticsController extends CController
                 ->join($join)
                 ->where($map)
                 ->group('S.application_id')
-                ->order('`total` desc')
+                ->order('S.created desc')
                 ->limit($p->firstRow . ',' . $p->listRows)
                 ->select ( );
             #var_dump($voList);exit;

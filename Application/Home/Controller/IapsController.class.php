@@ -11,24 +11,22 @@ namespace Home\Controller;
 
 class IapsController extends CController
 {
-    public function _filter()
-    {
-        array('I.status'=>array('gt',0));
-    }
 
     protected function _list($model, $map, $sortBy = '', $asc = false)
     {
 
         $join = '
+            LEFT JOIN pay_code P ON I.pay_code=P.pay_code
             LEFT JOIN applications A ON I.application_id=A.id
             LEFT JOIN developers D ON I.user_id=D.user_id
             LEFT JOIN users u ON I.user_id=u.id
         ';
-        #$map = array('S.status'=>array('eq',1));
+        $map = $_REQUEST['status'] ? array('I.status'=>array('eq',$_REQUEST['status']))+$this->_filter('I') : $this->_filter('I');
         //取得满足条件的记录数
-        $count = $model->field('SUM(S.fee)')->alias('I')->join($join)->where ( $map )->count ( 'I.id' );
-        #echo $model->getlastSql();exit;
-        #echo $count;exit;
+        $count = $model->alias('I')->join($join)->where( $map )->group('I.id')->select();
+        $count = count($count);
+        /*echo $count;
+        echo $model->getlastSql();exit;*/
         if ($count > 0) {
             //创建分页对象
             if (! empty ( $_REQUEST ['numPerPage'] )) {
@@ -47,10 +45,11 @@ class IapsController extends CController
             //分页查询数据
             $voList = $model
                 ->alias('I')
-                ->field(array('I.id', 'I.name','A.status', 'I.iap_key', 'I.pay_code', 'I.created', 'I.status','application_id','app_id','A.name AS app_name','D.company_name', 'u.username'))
+                ->field(array('I.id', 'I.name','A.status', 'I.iap_key', 'I.pay_code', 'I.created', 'I.status','application_id','app_id','A.name AS app_name','D.company_name', 'u.username','P.fee'))
                 ->join($join)
                 ->where($map)
-                ->order('A.status asc')
+                ->group('I.id')
+                ->order('I.created desc')
                 ->limit($p->firstRow . ',' . $p->listRows)
                 ->select ( );
 
@@ -61,6 +60,7 @@ class IapsController extends CController
             #var_dump($voList);exit;
             return $voList;
         }
+        R('Com/getDevelopers');
         return;
     }
 }

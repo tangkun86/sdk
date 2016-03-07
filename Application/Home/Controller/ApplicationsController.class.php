@@ -42,7 +42,7 @@ class ApplicationsController extends CController
                 ->field(array('A.id', 'A.name', 'A.status', 'app_key', 'app_id', 'username', "A.user_id", 'A.created'))
                 ->join($join)
                 ->where($map)
-                ->order('`status` asc')
+                ->order('A.created desc')
                 ->limit($p->firstRow . ',' . $p->listRows)
                 ->select ( );
             $developers = M('Developers');

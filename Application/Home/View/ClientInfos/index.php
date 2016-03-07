@@ -42,7 +42,7 @@
                                         <td><?php echo $info['app_id'] ?></td>
                                         <td><?php echo $info['ifpay_paycode_version'] ?></td>
                                         <td><?php echo $info['ifpay_version'] ?></td>
-                                        <td><?php echo date('Y-m-d H:i',$info['version']); ?></td>
+                                        <td><?php echo date('Y-m-d H:i',$info['created']); ?></td>
                                     </tr>
                                 <?php } ?>
                                 </tbody>

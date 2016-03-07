@@ -63,7 +63,7 @@
                                                 <a href="<?php echo __MODULE__.'/Applications/opration/value/8/id/'.$dev['id']; ?>" class="adminRecommend">测试拒绝</a>
                                             <?php } ?>
                                             <a href="<?php echo __MODULE__.'/Applications/viewApp/id/'.$dev['id']; ?>" class="adminRecommend">详细</a>
-                                            <a href="<?php echo __MODULE__.'/Statistics/statDetail/appId/'.$dev['id']; ?>" class="adminRecommend">订购明细</a>
+                                            <a href="<?php echo __MODULE__.'/Statistics/statDetail/user_id/'.$dev['user_id'].'/appId/'.$dev['id']; ?>" class="adminRecommend">订购明细</a>
                                         </td>
                                     </tr>
                                 <?php } ?>

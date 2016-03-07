@@ -95,6 +95,7 @@ class UnicomController extends ApicomController
             $application = M('Applications')->where(array('id'=>$iap['application_id']))->find();
             $developer = M('Developers')->where(array('user_id'=>$application['user_id']))->find();
             $Statistics['created'] = date('YmdHis',$Statistics['created']);
+            $fees = $Statistics['fee']*100;
             //
             $xml_return  = '<?xml version="1.0" encoding="UTF-8"?>';
             $xml_return .= '<paymessages>';
@@ -103,10 +104,11 @@ class UnicomController extends ApicomController
             $xml_return .= '<appversion>'.$Statistics['appversion'].'</appversion>';
             $xml_return .= '<appdeveloper>'.$developer['company_name'].'</appdeveloper>';
             $xml_return .= '<feename>'.$iap['name'].'</feename>';
-            $xml_return .= '<payfee>'.$Statistics['fee'].'</payfee>';
+            $xml_return .= '<payfee>'.$fees.'</payfee>';
             $xml_return .= '<serviceid>'.$mnc_conf->cucc_config['vaccode'][$Statistics['fee']].'</serviceid>';
             $xml_return .= '<gameaccount>'.$Statistics['gameaccount'].'</gameaccount>';
             $xml_return .= '<appid>'.$application['id'].'</appid>';
+//            $xml_return .= '<appid>90810000684220150909121700076900</appid>';
             $xml_return .= '<channelid>'.$mnc_conf->cucc_config['channelid'].'</channelid>';
             $xml_return .= '<cpid>'.$mnc_conf->cucc_config['cpid'].'</cpid>';
             $xml_return .= '<ordertime>'.$Statistics['created'].'</ordertime>';
@@ -115,17 +117,17 @@ class UnicomController extends ApicomController
             $xml_return .= '<macaddress>'.$Statistics['macaddress'].'</macaddress>';
             $xml_return .= '</paymessages>';
         }
+        M('Logs')->add(array(
+            'title'=>'toCucc',
+            'content'=>$xml_return,
+            'created'=>TIME
+        ));
         echo $xml_return;
     }
 
     //回调地址用作检验订单和返回处理订单信息
     public function checkOrder()
     {
-        /*M('Logs')->add(array(
-            'title'=>'requestdatas',
-            'content'=>json_encode($_REQUEST),
-            'created'=>TIME
-        ));*/
 
         if(isset($_REQUEST['serviceid'])){
             if($_REQUEST['serviceid']=='validateorderid'){
@@ -135,6 +137,11 @@ class UnicomController extends ApicomController
         }
 
         $xml = file_get_contents('php://input');
+        M('Logs')->add(array(
+            'title'=>'cuccResponse',
+            'content'=>$xml,
+            'created'=>TIME
+        ));
         $xml_obj = simplexml_load_string($xml,'SimpleXMLElement',LIBXML_NOCDATA);
         $mnc = new MNC();
         $sercretKey = md5('orderid='.$xml_obj->orderid.'&ordertime='.$xml_obj->ordertime.'&cpid='.$xml_obj->cpid.'&appid='.$xml_obj->appid.'&fid='.$xml_obj->fid.'&consumeCode='.$xml_obj->consumeCode.'&payfee='.$xml_obj->payfee.'&payType='.$xml_obj->payType.'&hRet='.$xml_obj->hRet.'&status='.$xml_obj->status.'&Key='.$mnc->cucc_config['Key']);

@@ -53,7 +53,7 @@
                                         <td><?php echo $el['app_key'] ?></td>
                                         <td><?php echo $el['username'] ?></td>
                                         <td><?php echo $el['company_name'] ?></td>
-                                        <td><?php echo $el['total'] ?></td>
+                                        <td><?php echo round($el['total'],2) ?></td>
                                         <td>
                                             <a href="<?php echo __MODULE__.'/Statistics/statDetail/appId/'.$el['id'].'/userId/'.$el['user_id']; ?>" class="adminRecommend">详细</a>
                                         </td>

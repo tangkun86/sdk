@@ -41,7 +41,7 @@ class DevelopersController extends CController
                 ->field(array('company_name','company_license','D.mobile','D.status','contact','D.created','username','D.user_id','D.id'))
                 ->join($join)
                 ->where($map)
-                ->order('`status` asc')
+                ->order('D.created desc')
                 ->limit($p->firstRow . ',' . $p->listRows)
                 ->select ( );
             //模板赋值显示

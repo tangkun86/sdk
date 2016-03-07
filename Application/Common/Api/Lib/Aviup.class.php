@@ -27,7 +27,7 @@ class Aviup
             "progress_title":"支付中",
             "progress_msg":"请稍等，视手机网络与运营商网络情况该过程可能需要花费10秒到70秒不等。",
             "error_title":"注意",
-            "error_msg":"支付过程中发生了问题 %ERRORDESCRIPTION%，订单编号为:%ORDER_ID%。\n 计费超时可在收到运营商计费成功短信后，重新启动APP来获得购买的物品。 \n 计费相关的其他问题可联系客服邮箱xuw@aviup.com"
+            "error_msg":"支付过程中发生了问题 %ERRORDESCRIPTION%，订单编号为:%ORDER_ID%。\n 计费超时可在收到运营商计费成功短信后，重新启动APP来获得购买的物品。 \n 计费相关的其他问题可联系客服邮箱:78151872@qq.com,客服qq78151872"
         }';
 
     /**

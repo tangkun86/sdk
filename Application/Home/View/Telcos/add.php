@@ -13,7 +13,7 @@
             <div class="rightSide fL">
                 <div id="rightCont">
                     <div class="globalInfo">
-                        <h1>添加电信运营商管理</h1>
+                        <h1>添加运营商</h1>
                     </div>
                     <div class="publishCont">
                         <form action="<?php echo U('Telcos/insert'); ?>" method="post">

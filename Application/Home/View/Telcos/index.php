@@ -11,11 +11,11 @@
             <div class="rightSide fL">
                 <div id="rightCont">
                     <div class="globalInfo">
-                        <h1>电信运营商管理</h1>
+                        <h1>运营商列表</h1>
                         <div class="publishCont">
                             <div class="handleToolbar">
                                 <div class="handleLeft fL">
-                                    <a href="<?php echo U('Telcos/add'); ?>" class="grayBtn">添加电信运营商</a>
+                                    <a href="<?php echo U('Telcos/add'); ?>" class="grayBtn">添加运营商</a>
                                 </div>
                                 <div class="handleLeft fR"><?php echo $page ?></div>
                             </div>

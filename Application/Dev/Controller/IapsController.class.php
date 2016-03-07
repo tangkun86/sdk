@@ -44,7 +44,7 @@ class IapsController extends CController
                 ->field(array('I.id', 'I.name','A.status', 'I.iap_key', 'I.pay_code', 'I.created', 'I.status','application_id','app_id','A.name AS app_name'))
                 ->join($join)
                 ->where($map)
-                ->order('A.status asc')
+                ->order('I.created desc')
                 ->limit($p->firstRow . ',' . $p->listRows)
                 ->select ( );
 

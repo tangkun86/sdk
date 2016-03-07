@@ -96,17 +96,21 @@ class CController extends Controller
         if(isset($_REQUEST['user_id']) || isset($_REQUEST['userId'])){
             $uid = isset($_REQUEST['user_id']) ? $_REQUEST['user_id'] : $_REQUEST['userId'];
             $uid += 0;
-            $map += array(
-                $alias.'user_id'=>array('eq',$uid),
-            );
+            if($uid > 0){
+                $map += array(
+                    $alias.'user_id'=>array('eq',$uid),
+                );
+            }
         }
 
         if(isset($_REQUEST['app_id']) || isset($_REQUEST['appId'])){
             $aid = isset($_REQUEST['app_id']) ? $_REQUEST['app_id'] : $_REQUEST['appId'];;
             $aid += 0;
-            $map += array(
-                $alias.'application_id'=>array('eq',$aid),
-            );
+            if($aid > 0){
+                $map += array(
+                    $alias.'application_id'=>array('eq',$aid),
+                );
+            }
         }
 
         if(isset($_REQUEST['start'])){
@@ -153,7 +157,7 @@ class CController extends Controller
         //排序方式默认按照倒序排列
         //接受 sost参数 0 表示倒序 非0都 表示正序
         if (isset ( $_REQUEST ['_sort'] )) {
-            $sort = $_REQUEST ['_sort'] == 'asc' ? 'asc' : 'desc'; //zhanghuihua@msn.com
+            $sort = $_REQUEST ['_sort'] == 'asc' ? 'asc' : 'desc';
         } else {
             $sort = $asc ? 'desc' : 'asc';
         }

@@ -7,6 +7,8 @@
         <a href="<?php echo __MODULE__.'/Statistics/statApp'; ?>" class="menuItem <?php if((CONTROLLER_NAME=='Statistics') && (ACTION_NAME=='statApp'))echo 'menuSelect';?>">应用计费统计</a>
         <a href="<?php echo __MODULE__.'/Statistics/statIap'; ?>" class="menuItem <?php if(CONTROLLER_NAME=='Statistics' && (ACTION_NAME=='statIap'))echo 'menuSelect';?>">IAP计费统计</a>
         <a href="<?php echo __MODULE__.'/Statistics/statDetail'; ?>" class="menuItem <?php if(CONTROLLER_NAME=='Statistics' && (ACTION_NAME=='statDetail'))echo 'menuSelect';?>">订购明细查询</a>
-        <a href="<?php echo __MODULE__.'/ClientInfos/index'; ?>" class="menuItem <?php if(CONTROLLER_NAME=='ClientInfos')echo 'menuSelect';?>">客户端安装信息</a>
+        <!--<a href="<?php /*echo __MODULE__.'/ClientInfos/index'; */?>" class="menuItem <?php /*if(CONTROLLER_NAME=='ClientInfos')echo 'menuSelect';*/?>">客户端安装信息</a>-->
+        <a href="<?php echo __MODULE__.'/Clients/index'; ?>" class="menuItem <?php if(CONTROLLER_NAME=='Clients' && (ACTION_NAME=='index'))echo 'menuSelect';?>">客户端安装信息</a>
+        <a href="<?php echo __MODULE__.'/Clients/statistics'; ?>" class="menuItem <?php if(CONTROLLER_NAME=='Clients' && (ACTION_NAME=='statistics'))echo 'menuSelect';?>">数据统计</a>
     </div>
 </td>

@@ -43,7 +43,7 @@
                         <td style="text-align:center"><?php echo $stat['iap_key']  ?></td>
                         <td style="text-align:center"><?php echo $stat['name']  ?></td>
                         <td style="text-align:center"><?php echo $stat['app_id']  ?></td>
-                        <td style="text-align:center">$<?php echo $stat['total']  ?></td>
+                        <td style="text-align:center">￥<?php echo round($stat['total'],2)  ?></td>
                     </tr>
                 <?php } ?>
                 </tbody>

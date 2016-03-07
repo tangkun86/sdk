@@ -27,12 +27,16 @@
                                             <span>应用名称:</span>
                                             <select name="appId"  id="appId">
                                                 <option value="">ALL</option>
+                                                <?php if(isset($apps)){
+                                                    foreach($apps as $a){ ?>
+                                                        <option <?php showSelected($_REQUEST['appId'],$a['id']); ?> value="<?php echo $a['id'] ;?>"><?php echo $a['name'] ;?></option>
+                                                    <?php } } ?>
                                             </select>
 
                                             <span>开始时间:</span>
-                                            <input name="start" value="<?php echo $_REQUEST['start']; ?>" class="select-datebox easyui-datebox">
+                                            <input name="start" value="<?php if(isset($_REQUEST['start']) && is_numeric($_REQUEST['start'])) echo date('Y-m-d',$_REQUEST['start']); ?>" class="select-datebox easyui-datebox">
                                             <span>结束时间:</span>
-                                            <input name="end" value="<?php echo $_REQUEST['end']; ?>" class="select-datebox easyui-datebox">
+                                            <input name="end" value="<?php if(isset($_REQUEST['end']) && is_numeric($_REQUEST['end'])) echo date('Y-m-d',$_REQUEST['end']); ?>" class="select-datebox easyui-datebox">
                                             <input type="submit" class="grayBtn">
                                         </div>
                                     </form>
@@ -59,7 +63,7 @@
                                         <td><?php echo $stat['app_id']  ?></td>
                                         <td><?php echo $stat['username']  ?></td>
                                         <td><?php echo $stat['company_name']  ?></td>
-                                        <td><?php echo $stat['total']  ?></td>
+                                        <td><?php echo round($stat['total'],2)  ?></td>
                                     </tr>
                                 <?php } ?>
                                 </tbody>

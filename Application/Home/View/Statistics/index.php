@@ -15,11 +15,12 @@
                         <div class="publishCont">
                             <div class="handleToolbar">
                                 <div class="handleLeft fL">
-                                    <form action="<?php echo U('Statistics/statDev'); ?>" method="get">
-                                        <div class="date-div"><span> 开始时间:</span>
-                                            <input name="start" value="<?php echo $_REQUEST['start']; ?>"  class="select-datebox easyui-datebox">
+                                    <form action="<?php echo U('Statistics/index'); ?>" method="get">
+                                        <div class="date-div">
+                                            <span>开始时间:</span>
+                                            <input name="start" value="<?php if(isset($_REQUEST['start']) && is_numeric($_REQUEST['start'])) echo date('Y-m-d',$_REQUEST['start']); ?>" class="select-datebox easyui-datebox">
                                             <span>结束时间:</span>
-                                            <input name="end" value="<?php echo $_REQUEST['end']; ?>"  class="select-datebox easyui-datebox">
+                                            <input name="end" value="<?php if(isset($_REQUEST['end']) && is_numeric($_REQUEST['end'])) echo date('Y-m-d',$_REQUEST['end']); ?>" class="select-datebox easyui-datebox">
                                             <input type="submit" class="grayBtn">
                                         </div>
                                     </form>
@@ -43,7 +44,7 @@
                                     <tr>
                                         <td><?php echo $el['username'] ?></td>
                                         <td><?php echo $el['company_name'] ?></td>
-                                        <td><?php echo $el['total'] ?></td>
+                                        <td><?php echo round($el['total'],2) ?></td>
                                         <td>
                                             <a href="<?php echo __MODULE__.'/Statistics/statDetail/userId/'.$el['user_id']; ?>" class="adminRecommend">详细</a>
                                         </td>
